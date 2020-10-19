@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Ali Alavi's Portfolio"
 title_separator          : "-"
 name                     : &name "Ali Alavi"
-description              : &description "MSc graduate in communication engineering, field and wave, from [University of Tehran](google.com)"
+description              : &description "MSc graduate in communication engineering, field and wave, from University of Tehran, Iran"
 url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
@@ -81,8 +81,8 @@ analytics:
 # Site Author
 author:
   name             : "Ali Alavi"
-  avatar           : "alialavi.jpg"
-  bio              : "MSc graduate in communication engineering, field and wave, from [University of Tehran](google.com)"
+  avatar           : "alialavi.png"
+  bio              : "MSc graduate in communication engineering, field and wave, from University of Tehran, Iran"
   location         : "Iran"
   employer         :
   pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
