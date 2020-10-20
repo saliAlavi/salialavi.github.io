@@ -1,20 +1,11 @@
 ---
-title: "Teaching experience 2"
+title: "Teacher assistant for logic circuits course"
 collection: teaching
-type: "Workshop"
+type: "Undergraduate course"
 permalink: /teaching/2015-spring-teaching-1
-venue: "University 1, Department"
+venue: "Ferdowsi University of Mashhad, Electrical and Electronics Engineering"
 date: 2015-01-01
-location: "City, Country"
+location: "Mashhad, Iran"
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
-
-Heading 1
-======
-
-Heading 2
-======
-
-Heading 3
-======
+Thought FPGA programming to logic circuit course students, toke exams and scored students.

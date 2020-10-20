@@ -20,21 +20,66 @@ Work experience
 * Summer 2015: Research Assistant
   * Ferdowsi University of Mashhad
   * Duties included: Worked as a research assistant on an IC with biomedical application under supervision of 
-  * Supervisor: Professor [Mohammad Taherzadeh](http://scholar.google.de/scholar?q=mohammad+taherzadeh-sani&hl=en&as_sdt=0&as_vis=1&oi=scholart)
+  * Supervisor: Professor [Mohammad Taherzadeh Sani](http://scholar.google.de/scholar?q=mohammad+taherzadeh-sani&hl=en&as_sdt=0&as_vis=1&oi=scholart)
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Summer 2016: High Speed Circuit Designer
+  * Tarashe Sanat-e Pishro
+  * Duties included: Designed a FPGA high speed board with DDR3 SDRAM, Ethernet and multiple peripherals
+
+* Jan. 2019 - Aug. 2019: Electrical Engineer
+  * Payafanavaran
+  * Duties included: Implemented a 3D reconstruction software in C#
+
+* Oct. 2019 - Mar. 2020: Consultant
+  * [AI-Bridge](https://www.ai-bridge.de/)
+  * Duties included: Implementation and design of state of art deep learning applications with Tensorflow and Pytorch
+
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Programming Languages
+  * C/C++
+  * C#
+  * Python( numpy, panda, scikitlearn, numba, . . . )
+  * MATLAB
+  * CUDA
+  * Labview
+* Digital Systems
+  * VHDL
+  * Verilog
+  * ARM Cortex-M MC
+* Deep Learning
+  * Tensorflow(v1 v2)
+  * Pytorch
+  * Keras
+* Communication Systems
+  * Hardware defined radio with MATLAB on FPGA
+* Electromagnetism
+  * CST
+  * ADS
+  * Lumerical
+  * COMSOL
+  * HFSS
+* Electronics
+  *  Cadence IC
+  * Virtuoso
+* Web Development
+  * HTML
+  * CSS
+  * PHP
+  * Javascript
+  * React
+  * SQL
+* Game Developement
+  * Unreal Engine 4
+  * Unity
+* Electrical Content Creation
+  * Fusion360
+  * Houdini
+* Others
+  * Linux
+  * LATEX
+  * git
 
 Publications
 ======
