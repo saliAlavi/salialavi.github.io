@@ -1,7 +1,15 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "Deep Learning"
+excerpt: "Various deep learning projects that I have worked on<br/><img src='/images/msc-thesis.jpg'>"
 collection: portfolio
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+I have started learning about deep learning from 2016. And from that time the flame of passion for this field has been undying.
+
+* A novel method for medical imaging resolution enhancement by end-to-end simulation of OCT imaging by Monte Carlo simulation and mapping the relation between the underlying physical structure and OCT imaging data.
+* Gaussian RBF, deep pose, sentiment analysis with BERT, speech recognition with attention network, medical image segmentation with SegAN. 
+* Image enhancement with Tenet, body part segmentation with PGAN, image colorization with residual encoder, image super resolution with ESRGAN application development.
+* Various paper implementation in the topics of image and text classification and segmentation, body
+part segmentation, speech recognition, time series prediction, NLP, etc.
+* License plate recognition based on novel networks architecture using CNN and LSTM and CTC loss.
+* Body transform network based on Nvidia’s Vid2Vid neural network in Pytorch.

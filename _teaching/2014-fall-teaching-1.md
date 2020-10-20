@@ -1,5 +1,5 @@
 ---
-title: "Teacher assistant for computer programming course"
+title: "Teacher Assistant For Computer Programming Course"
 collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/2014-fall-teaching-1

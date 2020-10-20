@@ -1,5 +1,5 @@
 ---
-title: "Teacher assistant for logic circuits course"
+title: "Teacher Assistant For Logic Circuits Course"
 collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/2015-spring-teaching-1
