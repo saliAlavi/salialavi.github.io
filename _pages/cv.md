@@ -19,7 +19,7 @@ Work experience
 ======
 * Summer 2015: Research Assistant
   * Ferdowsi University of Mashhad
-  * Duties included: Worked as a research assistant on an IC with biomedical application under supervision of 
+  * Duties included: Worked as a research assistant on an LNA IC design for DNA sequencing(patch clamp) application
   * Supervisor: Professor [Mohammad Taherzadeh Sani](http://scholar.google.de/scholar?q=mohammad+taherzadeh-sani&hl=en&as_sdt=0&as_vis=1&oi=scholart)
 
 * Summer 2016: High Speed Circuit Designer
@@ -87,11 +87,11 @@ Publications
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-%Talks
-%======
-%  <ul>{% for post in site.talks %}
-%    {% include archive-single-talk-cv.html %}
-%  {% endfor %}</ul>
+#Talks
+#======
+#  <ul>{% for post in site.talks %}
+#    {% include archive-single-talk-cv.html %}
+#  {% endfor %}</ul>
   
 Teaching
 ======
