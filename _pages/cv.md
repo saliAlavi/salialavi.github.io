@@ -11,16 +11,16 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* B.S. in Electrical and Electronics Engineering, Ferdowsi University of Mashhad, Sep. 2012 - Mar. 2016
+* M.S. in Communication Engineering Field And Wave, University of Tehran, Sep. 2017 - Oct. 2020
+
 
 Work experience
 ======
 * Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+  * Ferdowsi University of Mashhad
+  * Duties included: Worked as a research assistant on an IC with biomedical application under supervision of 
+  * Supervisor: Professor [Mohammad Taherzadeh](http://scholar.google.de/scholar?q=mohammad+taherzadeh-sani&hl=en&as_sdt=0&as_vis=1&oi=scholart)
 
 * Fall 2015: Research Assistant
   * Github University
