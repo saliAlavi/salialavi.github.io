@@ -3,7 +3,7 @@ title: "Neural network for estimation of optical characteristics of optically ac
 collection: publications
 permalink: /publication/Under_preparation_1
 excerpt: 'A novel end-to-end method to simulate the photon interaction in a turbid media and neural network to map the output image in OCT method to real physical structure'
-date: 2020-12-01
+date: 
 venue: ''
 paperurl: ''
 citation: ''

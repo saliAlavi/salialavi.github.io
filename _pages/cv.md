@@ -98,3 +98,30 @@ Teaching
 Service and leadership
 ======
 * A team leader in DigikalaNext AI competition
+
+
+
+Extracurricular Activities
+======
+* 2015-2016: Entrepreneurship Center, Ferdowsi University of Mashhad
+  * Coordinator and assistant
+* 2015: ICEE Conference, Ferdowsi University of Mashhad
+  * Student volunteer
+
+
+Languages
+======
+* Persian: Native Language
+* English: Full proficiency (TOEFL scheduled for October 24 2020)
+* Arabic: Basic Proficiency
+
+
+
+Interests
+======
+* Academic
+  * Machine Learning, Deep learning, Machine vision, NLP, Semantic Segmentation, GAN networks, interdisciplinary applications of deep learning, high performance computing, deep learning and parallel programming solutions for optics, photonics or metamaterial applications, deep learning solutions for end-to-end biomedical and commercial imaging systems
+* Sports
+  * basketball, football, swimming, gym
+* Other
+  * ancient world history, archaic languages, video game development
