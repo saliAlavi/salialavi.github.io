@@ -1,5 +1,5 @@
 ---
-title: "Teacher Assistant"
+title: "Teacher assistant for computer programming course"
 collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/2014-fall-teaching-1
@@ -10,11 +10,3 @@ location: "Mashhad, Iran"
 
 Thought C programming to computer programming undergraduate students, took exams and scored students.
 
-Heading 1
-======
-
-Heading 2
-======
-
-Heading 3
-======
