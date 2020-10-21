@@ -1,7 +1,11 @@
 ---
 title: "Photonics"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+excerpt: "A list of my researches and projects on photonics<br/><img src='/images/photonics.jpg'>"
 collection: portfolio
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+* Fourier optics MATLAB simulations under supervision of [Prof. Mohammad Neshat](http://scholar.google.com/citations?user=rTvgYb8AAAAJ&hl=en).
+* Bounded mode plasmon-polariton waveguide, nanowire waveguide, plasmonic waveguide in a thin
+metal, silicon based hybrid plasmonic waveguide, waveguide-fed optical hybrid nano antenna, leaky
+wave optical nano antenna, thin film solar cell enhancement with metasurface lens simulations in
+COMSOL under supervision of [Dr. Leila Yousefi](http://scholar.google.com/citations?user=46OlxNcAAAAJ&hl=en).
