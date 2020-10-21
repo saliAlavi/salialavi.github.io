@@ -1,6 +1,6 @@
 ---
 title: "Deep Learning"
-excerpt: "Various deep learning projects that I have worked on<br/><img src='/images/msc-thesis.png'>"
+excerpt: "Various deep learning research and projects that I have worked on<br/><img src='/images/msc-thesis.png'>"
 collection: portfolio
 ---
 
