@@ -18,4 +18,4 @@ of underlying physical structure and its OCT imaging counterpart. Although its g
 better understanding of underlying structure, it lacks in providing a comprehensive approach to increase the accuracy
 and imaging quality of OCT imaging and would only provide a set of examples on how imaging method might falter.
 To mitigate this problem and to demonstrate a new approach to improve the medical imaging without changing any
-hardware, we introduce a new pipeline consisting of Monte Carlo simulation followed by a deep neural network.[Not Submitted Yet] (Code)[https://github.com/saliAlavi/montecarloneuralnetwork]
+hardware, we introduce a new pipeline consisting of Monte Carlo simulation followed by a deep neural network.[Not Submitted Yet] [Code](https://github.com/saliAlavi/montecarloneuralnetwork)
