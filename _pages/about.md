@@ -8,4 +8,4 @@ redirect_from:
   - /about.html
 ---
 
-I'm looking for PhD positions in the topics of machine learning and deep learning applications, non convex optimization and applications of deep learning in interdisciplinary research.
+Computer Science PhD student at Indiana University Bloomington.
