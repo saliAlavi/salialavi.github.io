@@ -1,237 +1,358 @@
-/* ===== Windows XP résumé desktop — behaviour ===== */
+/* =========================================================================
+   NYQUIST — behaviour
+   One shared signal() primitive drives: the live hero baseline, the static
+   per-project sparklines, and the footer sign-off. Everything else is
+   reveal-on-scroll, active-nav, scroll progress, copy-to-clipboard, menu.
+   Vanilla JS, no dependencies.
+   ========================================================================= */
 (function () {
   "use strict";
 
-  /* ---- Boot screen ---- */
-  var boot = document.getElementById("boot");
-  setTimeout(function () { boot.classList.add("hide"); }, 1900);
-  setTimeout(function () { boot.style.display = "none"; }, 2600);
+  var TAU = Math.PI * 2;
+  var ACCENT = "#6ee7ff";
+  var GLOW = "rgba(110,231,255,.22)";
 
-  /* ---- Build chips ---- */
-  document.querySelectorAll("[data-chips]").forEach(function (box) {
-    box.getAttribute("data-chips").split(",").forEach(function (txt) {
-      var c = document.createElement("span");
-      c.className = "chip";
-      c.innerHTML = txt.trim();
-      box.appendChild(c);
-    });
-  });
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var pointerFine = window.matchMedia("(pointer: fine)").matches;
+  var saveData = (navigator.connection && navigator.connection.saveData) ||
+                 window.matchMedia("(prefers-reduced-data: reduce)").matches;
 
-  /* ---- Window setup: build titlebars ---- */
-  var z = 20;
-  var tasks = document.getElementById("tasks");
-  var taskBtns = {};       // id -> taskbar button
-  var wins = {};           // id (without win-) -> window el
+  /* ---- core signal primitive: x in [0,1] -> ~[-1,1] ---- */
+  function signal(x, t, seed) {
+    var s = seed || 0;
+    return 0.55 * Math.sin(x * TAU * 1.00 + t * 1.00 + s) +
+           0.30 * Math.sin(x * TAU * 2.37 + t * 0.63 + s * 1.7) +
+           0.18 * Math.sin(x * TAU * 3.71 + t * 0.41 + s * 2.3);
+  }
 
-  document.querySelectorAll(".win").forEach(function (win) {
-    var key = win.id.replace("win-", "");
-    wins[key] = win;
-    var title = win.getAttribute("data-title");
-    var icon = win.getAttribute("data-icon");
+  /* ---- DPR-capped canvas sizing ---- */
+  function fit(canvas) {
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var rect = canvas.getBoundingClientRect();
+    var w = Math.max(1, Math.round(rect.width));
+    var h = Math.max(1, Math.round(rect.height));
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    var ctx = canvas.getContext("2d");
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return { ctx: ctx, w: w, h: h };
+  }
 
-    var bar = document.createElement("div");
-    bar.className = "titlebar";
-    bar.innerHTML =
-      '<svg><use href="#' + icon + '"/></svg>' +
-      '<div class="t-text">' + title + '</div>' +
-      '<div class="tb-btns">' +
-        '<button class="tb-min" title="Minimize" aria-label="Minimize">_</button>' +
-        '<button class="tb-max" title="Maximize" aria-label="Maximize">□</button>' +
-        '<button class="tb-close" title="Close" aria-label="Close">✕</button>' +
-      '</div>';
-    win.insertBefore(bar, win.firstChild);
-
-    bar.querySelector(".tb-min").addEventListener("click", function (e) { e.stopPropagation(); minimize(key); });
-    bar.querySelector(".tb-max").addEventListener("click", function (e) { e.stopPropagation(); toggleMax(win); });
-    bar.querySelector(".tb-close").addEventListener("click", function (e) { e.stopPropagation(); closeWin(key); });
-    bar.addEventListener("dblclick", function (e) {
-      if (e.target.closest(".tb-btns")) return;
-      toggleMax(win);
-    });
-
-    win.addEventListener("mousedown", function () { focusWin(key); });
-    makeDraggable(win, bar);
-  });
-
-  /* ---- Open / focus / close / minimize ---- */
-  function openWin(key) {
-    var win = wins[key];
-    if (!win) return;
-    if (!win.classList.contains("open")) {
-      win.classList.add("open");
-      addTask(key);
-      lazyPdf(win);
+  function strokePath(ctx, pts, glow) {
+    if (glow) {
+      ctx.beginPath();
+      for (var i = 0; i < pts.length; i++) i ? ctx.lineTo(pts[i][0], pts[i][1]) : ctx.moveTo(pts[0][0], pts[0][1]);
+      ctx.strokeStyle = GLOW; ctx.lineWidth = 6; ctx.lineJoin = "round"; ctx.lineCap = "round"; ctx.stroke();
     }
-    win.classList.remove("min");
-    focusWin(key);
-    closeStart();
+    ctx.beginPath();
+    for (var j = 0; j < pts.length; j++) j ? ctx.lineTo(pts[j][0], pts[j][1]) : ctx.moveTo(pts[0][0], pts[0][1]);
+    ctx.strokeStyle = ACCENT; ctx.lineWidth = 1.25; ctx.lineJoin = "round"; ctx.lineCap = "round"; ctx.stroke();
   }
 
-  function closeWin(key) {
-    var win = wins[key];
-    win.classList.remove("open", "max", "min");
-    if (taskBtns[key]) { taskBtns[key].remove(); delete taskBtns[key]; }
-  }
-
-  function minimize(key) {
-    wins[key].classList.add("min");
-    wins[key].classList.remove("active");
-    if (taskBtns[key]) taskBtns[key].classList.remove("active");
-  }
-
-  function focusWin(key) {
-    var win = wins[key];
-    if (win.classList.contains("min")) win.classList.remove("min");
-    Object.keys(wins).forEach(function (k) {
-      wins[k].classList.remove("active");
-      if (taskBtns[k]) taskBtns[k].classList.remove("active");
-    });
-    win.classList.add("active");
-    win.style.zIndex = ++z;
-    if (taskBtns[key]) taskBtns[key].classList.add("active");
-  }
-
-  function toggleMax(win) {
-    win.classList.toggle("max");
-  }
-
-  function lazyPdf(win) {
-    var f = win.querySelector("iframe[data-src]");
-    if (f && !f.src) f.src = f.getAttribute("data-src");
-  }
-
-  /* ---- Taskbar buttons ---- */
-  function addTask(key) {
-    if (taskBtns[key]) return;
-    var win = wins[key];
-    var btn = document.createElement("button");
-    btn.className = "taskbtn";
-    btn.innerHTML = '<svg><use href="#' + win.getAttribute("data-icon") + '"/></svg><span>' +
-      win.getAttribute("data-title").split(" — ")[0] + "</span>";
-    btn.addEventListener("click", function () {
-      var active = win.classList.contains("active") && !win.classList.contains("min");
-      if (active) { minimize(key); }
-      else { openWin(key); }
-    });
-    tasks.appendChild(btn);
-    taskBtns[key] = btn;
-  }
-
-  /* ---- Dragging ---- */
-  function makeDraggable(win, handle) {
-    var sx, sy, ox, oy, drag = false;
-    handle.addEventListener("mousedown", start);
-    handle.addEventListener("touchstart", function (e) { start(e.touches[0]); }, { passive: true });
-
-    function start(e) {
-      if (e.target && e.target.closest && e.target.closest(".tb-btns")) return;
-      if (win.classList.contains("max")) return;
-      drag = true;
-      var r = win.getBoundingClientRect();
-      ox = r.left; oy = r.top; sx = e.clientX; sy = e.clientY;
-      win.style.left = ox + "px"; win.style.top = oy + "px";
-      document.addEventListener("mousemove", move);
-      document.addEventListener("mouseup", end);
-      document.addEventListener("touchmove", tmove, { passive: false });
-      document.addEventListener("touchend", end);
-    }
-    function move(e) {
-      if (!drag) return;
-      var nx = ox + (e.clientX - sx);
-      var ny = Math.max(0, oy + (e.clientY - sy));
-      nx = Math.min(Math.max(nx, -win.offsetWidth + 80), window.innerWidth - 80);
-      ny = Math.min(ny, window.innerHeight - 70);
-      win.style.left = nx + "px"; win.style.top = ny + "px";
-    }
-    function tmove(e) { if (drag) { e.preventDefault(); move(e.touches[0]); } }
-    function end() {
-      drag = false;
-      document.removeEventListener("mousemove", move);
-      document.removeEventListener("mouseup", end);
-      document.removeEventListener("touchmove", tmove);
-      document.removeEventListener("touchend", end);
+  function sampleDots(ctx, w, h, n) {
+    ctx.fillStyle = ACCENT;
+    for (var i = 0; i <= n; i++) {
+      var x = (i / n) * w;
+      ctx.beginPath();
+      ctx.arc(x, h / 2, 1.4, 0, TAU);
+      ctx.fill();
     }
   }
 
-  /* ---- Desktop icons (single-click select, double-click / touch open) ---- */
-  document.querySelectorAll(".dicon").forEach(function (ic) {
-    var key = ic.getAttribute("data-open");
-    ic.addEventListener("click", function () {
-      document.querySelectorAll(".dicon").forEach(function (d) { d.classList.remove("sel"); });
-      ic.classList.add("sel");
-    });
-    ic.addEventListener("dblclick", function () { openWin(key); });
-    // touch: open on tap
-    ic.addEventListener("touchend", function (e) { e.preventDefault(); openWin(key); }, { passive: false });
-  });
-  // click empty desktop -> deselect
-  document.getElementById("desktop").addEventListener("mousedown", function (e) {
-    if (e.target.id === "desktop" || e.target.classList.contains("icons"))
-      document.querySelectorAll(".dicon").forEach(function (d) { d.classList.remove("sel"); });
-  });
+  /* =======================================================================
+     HERO — the one live trace
+     ======================================================================= */
+  function initHero(canvas) {
+    var ctx, w, h, t = 0, raf = null, running = false, last = 0;
+    var mx = null, focus = 0, hovering = false;
+    var N = saveData ? 120 : 200;
+    var interactive = pointerFine && !reduceMotion;
 
-  /* ---- Generic [data-open] (start menu items) ---- */
-  document.querySelectorAll("[data-open]").forEach(function (el) {
-    if (el.classList.contains("dicon")) return;
-    el.addEventListener("click", function () { openWin(el.getAttribute("data-open")); });
-  });
-
-  /* ---- Start menu ---- */
-  var startBtn = document.getElementById("startbtn");
-  var startMenu = document.getElementById("startmenu");
-  var scrim = document.getElementById("scrim");
-
-  function openStart() {
-    startMenu.hidden = false; scrim.hidden = false; startBtn.classList.add("active");
-  }
-  function closeStart() {
-    startMenu.hidden = true; scrim.hidden = true; startBtn.classList.remove("active");
-  }
-  startBtn.addEventListener("click", function (e) {
-    e.stopPropagation();
-    startMenu.hidden ? openStart() : closeStart();
-  });
-  scrim.addEventListener("click", closeStart);
-  startMenu.querySelectorAll(".sm-item").forEach(function (it) {
-    it.addEventListener("click", function () { closeStart(); });
-  });
-
-  /* ---- Power buttons ---- */
-  function shutdownScreen(msg, sub) {
-    closeStart();
-    var bye = document.getElementById("bye");
-    if (!bye) {
-      bye = document.createElement("div");
-      bye.id = "bye";
-      document.body.appendChild(bye);
+    function yAt(xn) {
+      var cy = h / 2;
+      var env = Math.exp(-Math.pow((xn - 0.5) / 0.42, 2));
+      var amp = h * 0.30 * env;
+      if (interactive && mx !== null && focus > 0.001) {
+        amp += Math.exp(-Math.pow((xn - mx) / 0.06, 2)) * focus * h * 0.24;
+      }
+      return cy - signal(xn, t, 0) * amp;
     }
-    bye.innerHTML = '<div>' + msg + '</div><div class="small">' + sub + '</div>' +
-      '<button class="xp-btn" onclick="location.reload()">Turn back on</button>';
-    bye.classList.add("show");
+
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      var pts = [];
+      for (var i = 0; i <= N; i++) { var xn = i / N; pts.push([xn * w, yAt(xn)]); }
+      strokePath(ctx, pts, true);
+      if (reduceMotion) sampleDots(ctx, w, h, saveData ? 24 : 40);
+    }
+
+    function loop(now) {
+      raf = requestAnimationFrame(loop);
+      if (now - last < 33) return;          // ~30fps cap
+      last = now;
+      t += 0.012;
+      if (interactive) {
+        if (hovering) focus += (1 - focus) * 0.2;
+        else { focus *= 0.92; if (focus < 0.02) mx = null; }
+      }
+      draw();
+    }
+
+    function start() {
+      if (running || reduceMotion) return;
+      running = true; last = 0; raf = requestAnimationFrame(loop);
+    }
+    function stop() {
+      running = false;
+      if (raf) { cancelAnimationFrame(raf); raf = null; }
+    }
+    function size() {
+      var f = fit(canvas); ctx = f.ctx; w = f.w; h = f.h;
+      draw();                                // static frame always present
+    }
+
+    size();
+
+    if (interactive) {
+      canvas.addEventListener("pointermove", function (e) {
+        var r = canvas.getBoundingClientRect();
+        mx = (e.clientX - r.left) / r.width; hovering = true;
+      });
+      canvas.addEventListener("pointerleave", function () { hovering = false; });
+    }
+
+    // gate the loop to on-screen only
+    if (!reduceMotion && "IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        entries[0].isIntersecting ? start() : stop();
+      }, { threshold: 0 }).observe(canvas);
+    }
+
+    return size;
   }
-  document.getElementById("shutdown").addEventListener("click", function () {
-    shutdownScreen("It is now safe to turn off your computer.", "Thanks for visiting — Ali Alavi");
-  });
-  document.getElementById("logoff").addEventListener("click", function () {
-    shutdownScreen("Logging off…", "See you next time.");
-  });
 
-  /* ---- Clock ---- */
-  function tick() {
-    var d = new Date();
-    var h = d.getHours(), m = d.getMinutes();
-    var ap = h >= 12 ? "PM" : "AM";
-    h = h % 12; if (h === 0) h = 12;
-    document.getElementById("clock").textContent =
-      h + ":" + (m < 10 ? "0" + m : m) + " " + ap;
+  /* =======================================================================
+     SPARKLINES — static, one per project, same primitive
+     ======================================================================= */
+  function drawSpark(canvas) {
+    var f = fit(canvas), ctx = f.ctx, w = f.w, h = f.h, cy = h / 2;
+    var kind = canvas.getAttribute("data-kind");
+    var N = 96, pts = [], i, xn;
+    ctx.clearRect(0, 0, w, h);
+
+    if (kind === "eeg-stacked" || kind === "morph") {
+      // three offset traces (morph tightens amplitude toward the right)
+      var lanes = [-0.26, 0, 0.26];
+      for (var L = 0; L < lanes.length; L++) {
+        pts = [];
+        for (i = 0; i <= N; i++) {
+          xn = i / N;
+          var damp = kind === "morph" ? (0.35 + 0.65 * (1 - xn)) : 1;
+          pts.push([xn * w, cy + lanes[L] * h + signal(xn, L * 1.3, L * 2) * h * 0.14 * damp]);
+        }
+        strokePath(ctx, pts, false);
+      }
+      return;
+    }
+
+    if (kind === "spectrogram") {
+      var bars = 26;
+      ctx.fillStyle = ACCENT;
+      for (i = 0; i < bars; i++) {
+        xn = i / (bars - 1);
+        var mag = Math.abs(signal(xn, 0.7, 1)) * 0.62 + 0.06;
+        var bh = mag * h, bw = Math.max(1.5, w / bars - 2);
+        ctx.globalAlpha = 0.55 + 0.45 * mag;
+        ctx.fillRect(xn * (w - bw), h - bh, bw, bh);
+      }
+      ctx.globalAlpha = 1;
+      return;
+    }
+
+    if (kind === "reward") {
+      for (i = 0; i <= N; i++) {
+        xn = i / N;
+        var base = (1 - Math.exp(-3.2 * xn));                 // monotonic rise
+        var noise = signal(xn, 0, 3) * 0.05 * (1 - xn);
+        pts.push([xn * w, h - (base + noise) * h * 0.8 - h * 0.08]);
+      }
+      strokePath(ctx, pts, false);
+      return;
+    }
+
+    if (kind === "envelope") {
+      // amplitude-modulated audio-like burst
+      for (i = 0; i <= N; i++) {
+        xn = i / N;
+        var env = Math.exp(-Math.pow((xn - 0.5) / 0.34, 2));
+        pts.push([xn * w, cy + signal(xn, 0, 0) * h * 0.42 * env]);
+      }
+      strokePath(ctx, pts, false);
+      return;
+    }
+
+    // default: single eeg trace
+    for (i = 0; i <= N; i++) { xn = i / N; pts.push([xn * w, cy + signal(xn, 0.4, 1.1) * h * 0.30]); }
+    strokePath(ctx, pts, false);
   }
-  tick(); setInterval(tick, 10000);
 
-  /* ---- Open the About window on first load ---- */
-  setTimeout(function () { openWin("about"); }, 2700);
+  /* =======================================================================
+     SIGN-OFF — flat static hairline resolving into sample dots
+     ======================================================================= */
+  function drawSignoff(canvas) {
+    var f = fit(canvas), ctx = f.ctx, w = f.w, h = f.h, cy = h / 2;
+    ctx.clearRect(0, 0, w, h);
+    var N = 200, pts = [], i;
+    for (i = 0; i <= N; i++) { var xn = i / N; pts.push([xn * w, cy + signal(xn, 0, 0) * h * 0.14]); }
+    strokePath(ctx, pts, false);
+    var dots = saveData ? 28 : 48;
+    ctx.fillStyle = ACCENT;
+    for (i = 0; i <= dots; i++) {
+      var dx = (i / dots) * w;
+      ctx.beginPath(); ctx.arc(dx, cy, 1.5, 0, TAU); ctx.fill();
+    }
+  }
 
-  /* ---- Esc closes start menu ---- */
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closeStart();
+  /* =======================================================================
+     BOOTSTRAP
+     ======================================================================= */
+  function ready(fn) {
+    if (document.readyState !== "loading") fn();
+    else document.addEventListener("DOMContentLoaded", fn);
+  }
+
+  ready(function () {
+    var resizers = [];
+
+    var hero = document.getElementById("heroWave");
+    if (hero) resizers.push(initHero(hero));
+
+    document.querySelectorAll(".spark").forEach(function (c) {
+      drawSpark(c); resizers.push(function () { drawSpark(c); });
+    });
+
+    var signoff = document.getElementById("signoffWave");
+    if (signoff) { drawSignoff(signoff); resizers.push(function () { drawSignoff(signoff); }); }
+
+    // debounced resize -> re-fit every canvas
+    var rt;
+    window.addEventListener("resize", function () {
+      clearTimeout(rt);
+      rt = setTimeout(function () { resizers.forEach(function (f) { f(); }); }, 160);
+    });
+
+    /* ---- reveal on scroll (staggered, once) ---- */
+    var reveals = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      reveals.forEach(function (el) { el.classList.add("in"); });
+    } else {
+      // per-element stagger index within its parent
+      var counters = new Map();
+      reveals.forEach(function (el) {
+        var p = el.parentElement;
+        var n = counters.get(p) || 0; counters.set(p, n + 1);
+        el._delay = Math.min(n * 60, 260);
+      });
+      var ro = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          var el = e.target;
+          setTimeout(function () { el.classList.add("in"); }, el._delay || 0);
+          obs.unobserve(el);
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+      reveals.forEach(function (el) { ro.observe(el); });
+    }
+
+    /* ---- active nav link ---- */
+    var navLinks = {};
+    document.querySelectorAll(".nav__links a[href^='#']").forEach(function (a) {
+      navLinks[a.getAttribute("href").slice(1)] = a;
+    });
+    var watchIds = Object.keys(navLinks);
+    if (watchIds.length && "IntersectionObserver" in window) {
+      var na = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          for (var id in navLinks) navLinks[id].classList.remove("is-active");
+          var link = navLinks[e.target.id];
+          if (link) link.classList.add("is-active");
+        });
+      }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+      watchIds.forEach(function (id) { var s = document.getElementById(id); if (s) na.observe(s); });
+    }
+
+    /* ---- scroll progress + nav shadow ---- */
+    var nav = document.getElementById("nav");
+    var bar = document.getElementById("progressBar");
+    var ticking = false;
+    function onScroll() {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(function () {
+        var st = window.pageYOffset || document.documentElement.scrollTop;
+        var max = document.documentElement.scrollHeight - window.innerHeight;
+        if (bar) bar.style.transform = "scaleX(" + (max > 0 ? st / max : 0) + ")";
+        if (nav) nav.classList.toggle("scrolled", st > 40);
+        ticking = false;
+      });
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    /* ---- copy-to-clipboard emails (mailto fallback if it fails) ---- */
+    var status = document.getElementById("copyStatus");
+    document.querySelectorAll(".copy[data-copy]").forEach(function (el) {
+      el.addEventListener("click", function (e) {
+        var val = el.getAttribute("data-copy");
+        if (!navigator.clipboard || !navigator.clipboard.writeText) return; // let mailto proceed
+        e.preventDefault();
+        navigator.clipboard.writeText(val).then(function () {
+          var label = el.querySelector(".copy__label");
+          if (el._copyTimer) clearTimeout(el._copyTimer);   // cancel any pending restore
+          el.classList.add("copied");
+          label.textContent = "copied ✓";
+          if (status) { status.textContent = ""; status.textContent = val + " copied to clipboard"; }
+          el._copyTimer = setTimeout(function () {
+            label.textContent = val;                        // restore from source of truth, never live text
+            el.classList.remove("copied");
+            if (status) status.textContent = "";
+            el._copyTimer = null;
+          }, 1600);
+        }).catch(function () { window.location.href = "mailto:" + val; });
+      });
+    });
+
+    /* ---- mobile menu ---- */
+    var toggle = document.getElementById("menuToggle");
+    var sheet = document.getElementById("sheet");
+    if (toggle && sheet) {
+      function closeSheet() {
+        sheet.hidden = true; toggle.setAttribute("aria-expanded", "false");
+        toggle.textContent = "MENU"; toggle.focus();
+      }
+      function openSheet() {
+        sheet.hidden = false; toggle.setAttribute("aria-expanded", "true");
+        toggle.textContent = "CLOSE";
+        var first = sheet.querySelector("a"); if (first) first.focus();
+      }
+      toggle.addEventListener("click", function () {
+        sheet.hidden ? openSheet() : closeSheet();
+      });
+      sheet.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", function () { sheet.hidden = true; toggle.setAttribute("aria-expanded", "false"); toggle.textContent = "MENU"; });
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && !sheet.hidden) closeSheet();
+      });
+      // if the viewport grows to desktop while the sheet is open, close it
+      var mqDesktop = window.matchMedia("(min-width:781px)");
+      var onDesktop = function (e) {
+        if (e.matches && !sheet.hidden) {
+          sheet.hidden = true; toggle.setAttribute("aria-expanded", "false"); toggle.textContent = "MENU";
+        }
+      };
+      if (mqDesktop.addEventListener) mqDesktop.addEventListener("change", onDesktop);
+      else if (mqDesktop.addListener) mqDesktop.addListener(onDesktop);
+    }
   });
 })();
