@@ -1,56 +1,38 @@
-# PRD — Ali Alavi Portfolio v2 ("PRISM")
+# PRD — Ali Alavi Portfolio v3 ("NIGHTSHIFT")
 
-## 1. Problem
-v1 (dark "signal grid") tested as **empty, monotone, generic, and too abstract**. It did not
-make a senior/technical viewer stop and take the person seriously. v2 is a full redirection.
+## 1. Goal
+Rebuild the site from the latest résumé and in the visual language of Outcrowd's
+"Website for an Incident Management Platform" (Dribbble): black starfield, a single
+violet light beam, glassy dark panels, indigo glow buttons, a hero dashboard mockup.
 
-## 2. Goal
-A **bold, colorful, energetic, awwwards-caliber** personal site that instantly reads as
-high-craft and memorable, while staying credible to hiring managers, senior engineers, and
-research faculty. The site itself is a proof of engineering + design taste.
+## 2. Content rules
+- Works = CADENZA + everything on the author's arXiv (Merit, speech-quality hackability,
+  NEUROTOKEN, MAESTRO, contrastive AAD, the 2020 optics paper, and the three CVPR 2026
+  challenge reports: TLG, Perception First, R3-CoVR).
+- Competitions: BirdCLEF+ 2026 silver (145th); Obesity ML Challenge Part 3, 2nd place
+  in peer review for both proposals.
+- Every number on the page comes from a paper or a results page. The envelope chart is
+  labelled illustrative.
 
-## 3. Audience
-Primary: industry hiring managers & senior engineers. Secondary: research faculty/collaborators.
-Everyone should grasp the value in ~10 seconds and find the CV/contact immediately.
+## 3. Structure (single page)
+1. Floating glass pill nav + Résumé button.
+2. Hero: "Building machines that listen." with gradient lead words, glow + ghost CTAs.
+3. Research console (dashboard mockup): topic mix, KPIs, headline results, envelope
+   chart with a working window toggle, latest-paper card. Flattens as it scrolls in.
+4. Venue strip (text only).
+5. Problem card: hearing aids amplify every voice alike.
+6. Pipeline: EEG / gaze / head IMU / audio → AAD chip → which talker / side / envelope.
+7. Selected research bento (Merit, NEUROTOKEN, MAESTRO, hackable metrics, CADENZA, contrastive AAD).
+8. Papers & preprints, filterable by topic.
+9. Challenge record: five tilted glass tiles.
+10. Experience & education, toolkit, honors.
+11. Contact CTA with light rising from below; footer.
 
-## 4. Non-goals
-No OS/metaphor. No dark-monotone minimalism. No fake academic template. No headshot (not provided).
-Keep it text-forward — imagery is generated/graphic, not photographic.
+## 4. Design system
+Ink `#05050c`; indigo `#4b3ff0`; lavender `#9d8fff`; pink `#ff4f8f` (second chart
+series); green `#3ddc97` (status). Manrope for everything, JetBrains Mono for small
+labels. Radii 26 / 18 / 12. Glass = dark translucent fill + 1px white hairline.
 
-## 5. Design system
-- **Base:** light canvas (`#FAF9F6` / white) with big saturated color blocks and oversized type.
-- **Palette:** ink `#0B0B12`, violet `#7C3AED`, cyan `#22D3EE`, lime `#A3E635`, plus paper/white.
-  Color is used loudly (full-bleed blocks, gradient text, oversized numerals) — not as a thin accent.
-- **Type:** display **serif = Fraunces** (expressive, variable) + body **sans = Inter**; mono for tiny labels.
-  Oversized section numerals (01–08) as a graphic device.
-- **Signature visual:** interactive **WebGL flowing gradient** (violet→cyan→lime domain-warped noise)
-  that warps toward the cursor; graceful CSS mesh-gradient fallback; static frame under reduced-motion.
-- **Motion (rich / awwwards):** scroll-triggered reveals with stagger, section parallax, magnetic
-  buttons/links, a keyword marquee, gradient-animated headings, and a custom cursor (desktop, fine-pointer only).
-
-## 6. Structure (single long scroll)
-1. **Nav** — light, minimal, bold; RÉSUMÉ pill + AVAILABLE dot; scroll progress.
-2. **Hero** — WebGL fluid gradient; giant serif headline "Building machines that listen." with a
-   gradient/emphasis word; subhead; two bold CTAs; custom cursor.
-3. **Marquee** — scrolling keyword/venue ribbon (Interspeech · NeurIPS · IEEE TASLP · Speech · Neural audio · EEG/BCI).
-4. **Focus** — bold oversized list of research areas.
-5. **Selected Work** — **bento grid** of vivid project cards (CADENZA, NEUROTOKEN, MAESTRO, CorticalFlow,
-   AIMO3, Contrastive-AAD) with generated colorful visuals, status tags, oversized catalog numbers, magnetic hover.
-6. **Approach** — big statement + DATA→MODEL→DEPLOYMENT.
-7. **Experience** & **Education** — editorial lists with oversized years.
-8. **Stack** — colorful chip clusters / marquee.
-9. **Honors & service** — compact list.
-10. **Contact** — huge colorful CTA, copy-to-copy emails, résumé, GitHub/Scholar; footer colophon.
-
-## 7. Tech
-Static site, no build step, GitHub Pages. Vanilla HTML/CSS/JS + one small WebGL shader (no libraries).
-Google Fonts (Fraunces, Inter). Progressive enhancement: full content without JS (reveals default visible).
-
-## 8. Accessibility & performance
-Single `<h1>`, semantic sections, focus-visible, aria for interactive controls, aria-hidden canvases with
-text equivalents, reduced-motion + Save-Data fallbacks (freeze shader, disable cursor/parallax), custom
-cursor only on fine pointers, WebGL gated to on-screen + capped frame rate. Target fast first paint.
-
-## 9. Success criteria
-"Would I forward this?" yes in 10s; feels custom and high-end; color + motion land as intentional, not noisy;
-content (systems built + venues) is instantly legible; works great on mobile; no blank state without JS.
+## 5. Tech & accessibility
+Static HTML/CSS/JS, no dependencies, GitHub Pages. Progressive enhancement, reduced
+motion and Save-Data fallbacks, animations paused off-screen, mobile down to 360px.

@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Ali Alavi — PhD Researcher · Speech · Neural Audio · BCI</title>
-<meta name="description" content="Ali Alavi (S. A. Alavi Bajestan) — PhD researcher in Computer Science at The Ohio State University. Speech processing, sub-kilobit neural audio coding, and decoding auditory attention from EEG. Deep-learning systems, end to end."/>
+<title>Ali Alavi — Auditory Attention Decoding · Speech · Video-Language</title>
+<meta name="description" content="Ali Alavi (S. A. Alavi Bajestan), Ph.D. researcher in Computer Science at The Ohio State University. Auditory attention decoding from EEG, gaze and head motion; speech-quality metrics; neural audio coding; video-language reasoning."/>
 <meta name="author" content="Ali Alavi"/>
-<meta name="theme-color" content="#FAF9F6"/>
-<meta name="color-scheme" content="light"/>
+<meta name="theme-color" content="#05050C"/>
+<meta name="color-scheme" content="dark"/>
 <link rel="canonical" href="https://salialavi.github.io"/>
 <script>document.documentElement.className += " js";</script>
 
 <meta property="og:type" content="profile"/>
-<meta property="og:title" content="Ali Alavi — PhD Researcher · Speech · Neural Audio · BCI"/>
-<meta property="og:description" content="Building machines that listen. Speech, sub-kilobit neural audio coding, and decoding auditory attention from EEG — end to end."/>
+<meta property="og:title" content="Ali Alavi — Building machines that listen"/>
+<meta property="og:description" content="Auditory attention decoding from EEG, gaze and head motion · speech-quality metrics · neural audio coding · video-language reasoning. PhD researcher, The Ohio State University."/>
 <meta property="og:url" content="https://salialavi.github.io"/>
 <meta property="og:image" content="https://salialavi.github.io/files/og-cover.png"/>
 <meta property="og:image:width" content="1200"/>
@@ -22,15 +22,15 @@
 <meta property="profile:first_name" content="Ali"/>
 <meta property="profile:last_name" content="Alavi"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Ali Alavi — PhD Researcher · Speech · Neural Audio · BCI"/>
-<meta name="twitter:description" content="Building machines that listen. Speech, neural audio coding, and EEG-based auditory attention decoding."/>
+<meta name="twitter:title" content="Ali Alavi — Building machines that listen"/>
+<meta name="twitter:description" content="Auditory attention decoding, speech-quality metrics, neural audio coding and video-language reasoning."/>
 <meta name="twitter:image" content="https://salialavi.github.io/files/og-cover.png"/>
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%237C3AED'/%3E%3Cstop%20offset='.5'%20stop-color='%2322D3EE'/%3E%3Cstop%20offset='1'%20stop-color='%23A3E635'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='32'%20height='32'%20rx='8'%20fill='url(%23g)'/%3E%3C/svg%3E"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%238E7DFF'/%3E%3Cstop%20offset='1'%20stop-color='%233A2BE0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='32'%20height='32'%20rx='9'%20fill='%2305050C'/%3E%3Crect%20x='3'%20y='3'%20width='26'%20height='26'%20rx='7'%20fill='url(%23g)'/%3E%3Cpath%20d='M8%2017h3l2-6%203%2011%202.5-8%201.5%203H24'%20fill='none'%20stroke='white'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E"/>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap"/>
 
 <link rel="stylesheet" href="styles.css"/>
 
@@ -39,13 +39,13 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Ali Alavi",
-  "alternateName": "S. A. Alavi Bajestan",
+  "alternateName": ["S. A. Alavi Bajestan", "Seyed Ali Alavi Bajestan"],
   "jobTitle": "PhD Researcher, Computer Science",
   "affiliation": { "@type": "CollegeOrUniversity", "name": "The Ohio State University" },
   "url": "https://salialavi.github.io",
   "email": "mailto:alavibajestan.1@osu.edu",
   "sameAs": ["https://github.com/salialavi"],
-  "knowsAbout": ["Speech processing","Neural audio coding","Auditory attention decoding","EEG","Brain-computer interfaces","Deep learning","Foundation models"],
+  "knowsAbout": ["Auditory attention decoding","EEG","Brain-computer interfaces","Multimodal learning","Speech quality assessment","Neural audio coding","Video-language models","Deep learning"],
   "address": { "@type": "PostalAddress", "addressLocality": "Columbus", "addressRegion": "OH", "addressCountry": "US" }
 }
 </script>
@@ -53,284 +53,475 @@
 <body>
 
 <a class="skip" href="#main">Skip to content</a>
-
-<!-- custom cursor (desktop, fine-pointer only) -->
-<div class="cursor" id="cursor" aria-hidden="true"></div>
-<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<canvas class="stars" id="stars" aria-hidden="true"></canvas>
 
 <!-- ===== Nav ===== -->
 <header class="nav" id="nav">
-  <div class="nav__inner">
-    <a class="nav__logo" href="#hero" data-magnetic aria-label="Ali Alavi — home">
-      <span class="nav__mark" aria-hidden="true"></span>
-      <span class="wm-full">Ali&nbsp;Alavi</span>
-    </a>
+  <div class="nav__pill">
+    <a class="nav__logo" href="#top" aria-label="Ali Alavi, home">Ali&nbsp;Alavi</a>
     <nav class="nav__links" aria-label="Primary">
-      <a href="#work" data-nav data-magnetic>Work</a>
-      <a href="#focus" data-nav data-magnetic>Focus</a>
-      <a href="#experience" data-nav data-magnetic>Experience</a>
-      <a href="#contact" data-nav data-magnetic>Contact</a>
+      <a href="#research" data-nav>Research</a>
+      <a href="#papers" data-nav>Papers</a>
+      <a href="#challenges" data-nav>Challenges</a>
+      <a href="#experience" data-nav>Experience</a>
+      <a href="#contact" data-nav>Contact</a>
     </nav>
-    <div class="nav__meta">
-      <span class="avail"><span class="avail__dot" aria-hidden="true"></span>Available&nbsp;2026</span>
-      <a class="pill pill--sm" href="files/Resume-AliAlavi.pdf" target="_blank" rel="noopener" data-magnetic>Résumé</a>
-      <button class="nav__toggle" id="menuToggle" aria-expanded="false" aria-controls="sheet">Menu</button>
-    </div>
+    <a class="btn btn--sm btn--solid nav__cta" href="files/Resume-AliAlavi.pdf" target="_blank" rel="noopener">Résumé</a>
+    <button class="nav__toggle" id="menuToggle" aria-expanded="false" aria-controls="sheet"><span class="sr-only">Menu</span><i></i><i></i></button>
   </div>
-  <div class="nav__progress" aria-hidden="true"><span id="progressBar"></span></div>
+  <div class="sheet" id="sheet" hidden>
+    <nav aria-label="Mobile">
+      <a href="#research" data-sheet>Research</a>
+      <a href="#papers" data-sheet>Papers</a>
+      <a href="#challenges" data-sheet>Challenges</a>
+      <a href="#experience" data-sheet>Experience</a>
+      <a href="#contact" data-sheet>Contact</a>
+      <a href="files/Resume-AliAlavi.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+    </nav>
+  </div>
 </header>
-
-<div class="sheet" id="sheet" hidden>
-  <nav aria-label="Mobile">
-    <a href="#work" data-sheet>Work</a>
-    <a href="#focus" data-sheet>Focus</a>
-    <a href="#experience" data-sheet>Experience</a>
-    <a href="#education" data-sheet>Education</a>
-    <a href="#stack" data-sheet>Stack</a>
-    <a href="#contact" data-sheet>Contact</a>
-    <a href="files/Resume-AliAlavi.pdf" target="_blank" rel="noopener">Résumé ↓</a>
-  </nav>
-</div>
 
 <main id="main" tabindex="-1">
 
   <!-- ===== Hero ===== -->
-  <section class="hero" id="hero" aria-labelledby="hero-headline">
-    <div class="hero__grid">
-      <div class="hero__text">
-        <p class="eyebrow reveal"><span class="eyebrow__dot" aria-hidden="true"></span>PhD Researcher · Computer Science · The Ohio State University</p>
-        <h1 class="hero__headline" id="hero-headline">
-          <span class="reveal-line"><span>Building</span></span>
-          <span class="reveal-line"><span>machines that</span></span>
-          <span class="reveal-line"><span class="grad">listen.</span></span>
-        </h1>
-        <p class="hero__sub reveal">I build deep-learning systems for <strong>speech</strong>, <strong>sub-kilobit neural audio coding</strong>, and <strong>decoding auditory attention from EEG</strong> — end to end, from custom electrodes to model design to deployment.</p>
-        <div class="hero__cta reveal">
-          <a class="pill pill--fill" href="#work" data-magnetic>See the work <span aria-hidden="true">→</span></a>
-          <a class="pill pill--ghost" href="files/Resume-AliAlavi.pdf" target="_blank" rel="noopener" data-magnetic>Download CV <span aria-hidden="true">↓</span></a>
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="wrap hero__text">
+      <p class="eyebrow reveal"><span class="eyebrow__dot" aria-hidden="true"></span>PhD researcher · Computer Science · The Ohio State University</p>
+      <h1 class="hero__title reveal" id="hero-title"><span class="grad">Building machines</span><br/> that&nbsp;listen.</h1>
+      <p class="hero__sub reveal">I decode which voice a listener follows from <strong>EEG, gaze and head motion</strong>, stress-test the <strong>speech-quality metrics</strong> we train against, and build <strong>video-language</strong> systems, with evaluation that holds up.</p>
+      <div class="hero__cta reveal">
+        <a class="btn btn--glow" href="#research">See the research</a>
+        <a class="btn btn--ghost" href="files/Resume-AliAlavi.pdf" target="_blank" rel="noopener">Download CV</a>
+      </div>
+    </div>
+
+    <!-- research console (dashboard mockup with real numbers) -->
+    <div class="console-wrap reveal" id="consoleWrap">
+      <div class="beam" aria-hidden="true"></div>
+      <div class="flare" aria-hidden="true"></div>
+      <div class="console" id="console" role="region" aria-label="Research overview">
+        <div class="cs-top">
+          <span class="cs-logo">alavi<span>.lab</span></span>
+          <nav class="cs-tabs" aria-label="Overview shortcuts">
+            <a class="is-on" href="#research">Overview</a>
+            <a href="#papers">Papers</a>
+            <a href="#challenges">Challenges</a>
+            <a href="#experience">Experience</a>
+          </nav>
+          <div class="cs-icons">
+            <a class="cs-ico" href="https://github.com/salialavi" target="_blank" rel="noopener" aria-label="GitHub (opens in new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" fill="currentColor"/></svg></a>
+            <a class="cs-ico" href="mailto:alavibajestan.1@osu.edu" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></a>
+            <span class="cs-avatar" aria-hidden="true">AA</span>
+          </div>
         </div>
-        <p class="hero__meta reveal">Advised by Dr.&nbsp;Donald&nbsp;S.&nbsp;Williamson · Publishing as S.&nbsp;A.&nbsp;Alavi&nbsp;Bajestan · Columbus, Ohio</p>
-      </div>
-      <div class="hero__visual reveal" data-parallax="-30">
-        <canvas id="fluid" aria-hidden="true"></canvas>
-        <div class="hero__badge"><span>fs 16 kHz</span><span>&lt; 1 kbps</span><span>EEG · BCI</span></div>
+
+        <div class="cs-head">
+          <div class="cs-hello-wrap">
+            <p class="cs-hello">Research overview, <span>2026</span></p>
+            <div class="cs-mix" aria-label="Papers by topic">
+              <div class="mx" style="--w:4"><span class="mx__k">Attention</span><span class="mx__bar mx__bar--pink">4 papers</span></div>
+              <div class="mx" style="--w:3"><span class="mx__k">Video</span><span class="mx__bar mx__bar--white">3</span></div>
+              <div class="mx" style="--w:2"><span class="mx__k">Speech</span><span class="mx__bar mx__bar--grey">2</span></div>
+              <div class="mx" style="--w:1.5"><span class="mx__k">Optics</span><span class="mx__bar mx__bar--hatch">1</span></div>
+            </div>
+          </div>
+          <dl class="cs-kpis">
+            <div class="kpi" title="4 posted since September 2026"><dt>arXiv preprints</dt><dd><span class="kpi__badge kpi__badge--up" aria-hidden="true">+4</span><span class="kpi__n" data-count="9">9</span></dd></div>
+            <div class="kpi"><dt>CVPR ’26 challenges</dt><dd><span class="kpi__badge kpi__badge--up" aria-hidden="true">✓</span><span class="kpi__n" data-count="3">3</span></dd></div>
+            <div class="kpi"><dt>Competition awards</dt><dd><span class="kpi__badge kpi__badge--hot" aria-hidden="true">★</span><span class="kpi__n" data-count="2">2</span></dd></div>
+          </dl>
+        </div>
+
+        <div class="cs-grid">
+          <div class="cs-card cs-sum">
+            <p class="cs-card__t">Headline results</p>
+            <ul class="sum">
+              <li><span class="dot dot--b"></span><span class="sum__k">CoVR-R<small>R@1</small></span><b>91.9%</b></li>
+              <li><span class="dot dot--g"></span><span class="sum__k">VRR<small>test accuracy</small></span><b>81.2%</b></li>
+              <li><span class="dot dot--p"></span><span class="sum__k">Merit<small>new listeners</small></span><b>0.74</b></li>
+            </ul>
+            <p class="sum__note"><span aria-hidden="true">◔</span> Test-split numbers, as reported in each paper.</p>
+          </div>
+
+          <div class="cs-card cs-chart">
+            <div class="chart__head">
+              <p class="cs-card__t">Envelope tracking</p>
+              <div class="seg" role="group" aria-label="Decision window">
+                <button type="button" data-win="1">1 s</button>
+                <button type="button" data-win="5" class="is-on" aria-pressed="true">5 s</button>
+                <button type="button" data-win="10">10 s</button>
+              </div>
+            </div>
+            <div class="chart__body">
+              <canvas id="envChart" aria-hidden="true"></canvas>
+              <div class="chart__tip" id="envTip" aria-hidden="true"><b>Attended talker</b><span id="envTipR">window 5 s</span></div>
+            </div>
+            <p class="chart__legend"><span class="lg lg--v">speech envelope</span><span class="lg lg--p">decoded from EEG</span><span class="chart__ill">illustrative</span></p>
+          </div>
+
+          <a class="cs-card cs-blue" href="https://arxiv.org/abs/2610.17507" target="_blank" rel="noopener">
+            <span class="cs-blue__t">Latest · Merit <span class="cs-blue__go" aria-hidden="true">↗</span></span>
+            <span class="cs-blue__d">Making every modality earn its contribution in multimodal attention decoding.</span>
+            <span class="tick tick--a">Unseen listeners <i>0.74</i></span>
+            <span class="tick tick--b">Chance level <i>0.25</i></span>
+          </a>
+        </div>
       </div>
     </div>
-    <div class="hero__scroll" aria-hidden="true"><span>Scroll</span><i></i></div>
   </section>
 
-  <!-- ===== Marquee ===== -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee__track">
-      <span>Speech Processing</span><b>◆</b><span>Neural Audio Coding</span><b>◆</b><span>Auditory Attention · EEG</span><b>◆</b><span>Brain–Computer Interfaces</span><b>◆</b><span>Foundation Models</span><b>◆</b><span>RL for LLMs</span><b>◆</b>
-      <span>Speech Processing</span><b>◆</b><span>Neural Audio Coding</span><b>◆</b><span>Auditory Attention · EEG</span><b>◆</b><span>Brain–Computer Interfaces</span><b>◆</b><span>Foundation Models</span><b>◆</b><span>RL for LLMs</span><b>◆</b>
+  <!-- ===== Where the work shows up ===== -->
+  <section class="strip" aria-label="Where the work appears">
+    <div class="wrap strip__row">
+      <span>arXiv</span>
+      <span>CVPR&nbsp;2026 Workshops</span>
+      <span>Kaggle</span>
+      <span>CrunchDAO</span>
+      <span>Hugging&nbsp;Face</span>
+      <span>Ohio&nbsp;State</span>
     </div>
-  </div>
+  </section>
 
-  <!-- ===== 01 Focus ===== -->
-  <section class="section focus" id="focus" aria-labelledby="focus-title">
+  <!-- ===== Why ===== -->
+  <section class="section" id="why" aria-labelledby="why-title">
     <div class="wrap">
-      <header class="sec-head reveal">
-        <span class="sec-num" aria-hidden="true">01</span>
-        <h2 class="sec-title" id="focus-title">What I work on</h2>
+      <div class="why reveal">
+        <div class="why__text">
+          <h2 id="why-title">Hearing aids amplify every voice alike</h2>
+          <p>More than 1.5 billion people have hearing loss. In a crowded room a device needs to know which talker you are following. The answer is in your brain, your eyes and the turn of your head.</p>
+        </div>
+        <div class="why__viz" aria-hidden="true">
+          <svg class="why__lines" id="whyLines"></svg>
+          <span class="tag tag--1">Talker A</span>
+          <span class="tag tag--2">Talker B</span>
+          <span class="tag tag--3">Talker C</span>
+          <span class="tag tag--hi tag--4">Attended ✓</span>
+          <span class="tag tag--c">Who are you listening to?</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Pipeline ===== -->
+  <section class="section" id="pipeline" aria-labelledby="pipe-title">
+    <div class="wrap">
+      <header class="head reveal">
+        <h2 id="pipe-title">From sensors to a decision</h2>
+        <p>MAESTRO records the signals, NEUROTOKEN and Merit decode them, and the evaluation is built to catch leakage and shortcuts.</p>
       </header>
-      <ol class="focus-list">
-        <li class="reveal" data-magnetic><span class="fl-n">01</span><span class="fl-t">Speech processing</span></li>
-        <li class="reveal" data-magnetic><span class="fl-n">02</span><span class="fl-t">Neural audio coding</span></li>
-        <li class="reveal" data-magnetic><span class="fl-n">03</span><span class="fl-t">Auditory attention decoding · EEG</span></li>
-        <li class="reveal" data-magnetic><span class="fl-n">04</span><span class="fl-t">EEG-informed speech enhancement</span></li>
-        <li class="reveal" data-magnetic><span class="fl-n">05</span><span class="fl-t">Brain–computer interfaces</span></li>
-        <li class="reveal" data-magnetic><span class="fl-n">06</span><span class="fl-t">Foundation models</span></li>
-        <li class="reveal" data-magnetic><span class="fl-n">07</span><span class="fl-t">Reinforcement learning for LLMs</span></li>
-      </ol>
+      <div class="flow reveal" id="flow">
+        <svg class="flow__wires" id="flowWires" aria-hidden="true"></svg>
+        <div class="flow__col flow__in">
+          <div class="node" data-wire="in"><b>EEG</b><span>Neural response to speech</span></div>
+          <div class="node" data-wire="in"><b>Eye gaze</b><span>Gaze &amp; pupillometry</span></div>
+          <div class="node" data-wire="in"><b>Head IMU</b><span>Orientation &amp; motion</span></div>
+          <div class="node" data-wire="in"><b>Audio</b><span>Candidate talkers</span></div>
+        </div>
+        <div class="flow__chip" id="flowChip">
+          <div class="chip3d"><span>AAD</span></div>
+        </div>
+        <div class="flow__col flow__out">
+          <div class="node node--out" data-wire="out"><b>Which talker</b><span>Source attention</span></div>
+          <div class="node node--out" data-wire="out"><b>Which side</b><span>Direction attention</span></div>
+          <div class="node node--out" data-wire="out"><b>What they heard</b><span>Envelope reconstruction</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ===== 02 Selected Work (bento) ===== -->
-  <section class="section work" id="work" aria-labelledby="work-title">
+  <!-- ===== Research (bento) ===== -->
+  <section class="section" id="research" aria-labelledby="research-title">
     <div class="wrap">
-      <header class="sec-head reveal">
-        <span class="sec-num" aria-hidden="true">02</span>
-        <h2 class="sec-title" id="work-title">Selected work</h2>
-        <p class="sec-lede">Research &amp; systems I built, most recent first. In submission &amp; preprints.</p>
+      <header class="head reveal">
+        <h2 id="research-title">Selected research</h2>
+        <p>Recent work with Dr.&nbsp;Donald&nbsp;S.&nbsp;Williamson at Ohio State. Full list below.</p>
       </header>
 
       <div class="bento">
-        <article class="card card--lg c-violet reveal" data-tilt data-kind="wave">
-          <canvas class="card__viz" aria-hidden="true"></canvas>
-          <div class="card__body">
-            <span class="card__no" aria-hidden="true">W-01</span>
-            <div class="card__tags"><span class="chip">Submitted</span><span class="chip">Interspeech 2026</span><span class="chip">Lead</span></div>
-            <h3 class="card__title">CADENZA</h3>
-            <p class="card__desc">Content-adaptive neural audio codec at sub-kilobit rates.</p>
-            <p class="card__meta">FSQ · Flow matching · Streaming Conformer · &lt;1 kbps</p>
+        <!-- Merit -->
+        <article class="card card--blue reveal">
+          <span class="card__kicker">Oct 2026 · arXiv</span>
+          <h3>Merit: make every modality earn its share.</h3>
+          <p>A multimodal attention decoder and a test of what each input contributes: shuffle one stream, measure the accuracy drop, split it with Shapley values. Adding gaze and head motion raises accuracy but nearly halves the brain’s share of it.</p>
+          <div class="card__stats"><span><b>0.82</b> within listeners</span><span><b>0.74</b> unseen listeners</span><span>chance 0.25</span></div>
+          <a class="card__link" href="https://arxiv.org/abs/2610.17507" target="_blank" rel="noopener">Read on arXiv <span aria-hidden="true">↗</span></a>
+          <i class="card__sparkles" aria-hidden="true"></i>
+        </article>
+
+        <!-- NEUROTOKEN -->
+        <article class="card card--wide reveal">
+          <div class="card__split">
+            <div>
+              <span class="card__kicker">Sep 2026 · arXiv</span>
+              <h3>NEUROTOKEN</h3>
+              <p>One EEG network with three heads: which talker, which side, and the attended envelope. A conditional flow-matching head scores each candidate talker by likelihood ratio instead of a single noisy correlation.</p>
+              <a class="card__link" href="https://arxiv.org/abs/2610.00397" target="_blank" rel="noopener">Read on arXiv <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="arch" aria-hidden="true">
+              <div class="arch__in">EEG front-end</div>
+              <div class="arch__heads">
+                <span class="is-hot">Which talker<small>flow matching</small></span><span>Which side<small>direction</small></span><span>Envelope<small>reconstruction</small></span>
+              </div>
+            </div>
+          </div>
+          <ul class="card__facts">
+            <li><b>+9–16%</b> source-AAD at 5 s over the strongest non-generative baseline (KUL, DTU, NJU)</li>
+            <li><b>~3×</b> lower across-subject variance</li>
+            <li><b>17–45%</b> drop in published direction-AAD numbers under a trial-disjoint protocol</li>
+          </ul>
+        </article>
+
+        <!-- MAESTRO -->
+        <article class="card card--wide reveal">
+          <div class="card__split card__split--rev">
+            <div>
+              <span class="card__kicker">Sep 2026 · Submitted to IEEE TASLP</span>
+              <h3>MAESTRO, an open multimodal corpus</h3>
+              <p>The first auditory-attention dataset to record EEG, eye gaze, pupillometry, egocentric video and head IMU at once, with four competing talkers and background noise across several SNRs. I designed and built the EEG + eye-tracking recording setup: IRB protocol, stimulus delivery, hardware sync and participant sessions.</p>
+              <div class="card__links">
+                <a class="card__link" href="https://arxiv.org/abs/2609.31898" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a>
+                <a class="card__link" href="https://huggingface.co/datasets/aspire-osu/maestro-eeg-dataset" target="_blank" rel="noopener">Dataset <span aria-hidden="true">↗</span></a>
+                <a class="card__link" href="https://github.com/ASPIRE-OSU/MAESTRO" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+            <ul class="tickets" aria-label="Recorded streams">
+              <li><span class="tk__ico">≋</span><span class="tk__m"><b>EEG</b><small>neural response</small></span><span class="tk__s">synced</span></li>
+              <li><span class="tk__ico">◉</span><span class="tk__m"><b>Eye gaze + pupils</b><small>eye tracker</small></span><span class="tk__s">synced</span></li>
+              <li><span class="tk__ico">▣</span><span class="tk__m"><b>Egocentric video</b><small>scene camera</small></span><span class="tk__s">synced</span></li>
+              <li><span class="tk__ico">⟳</span><span class="tk__m"><b>Head IMU</b><small>orientation</small></span><span class="tk__s">synced</span></li>
+              <li><span class="tk__ico">♪</span><span class="tk__m"><b>4 talkers + noise</b><small>multiple SNRs</small></span><span class="tk__s tk__s--hot">stimulus</span></li>
+            </ul>
           </div>
         </article>
 
-        <article class="card card--tall c-cyan reveal" data-tilt data-kind="eeg">
-          <canvas class="card__viz" aria-hidden="true"></canvas>
-          <div class="card__body">
-            <span class="card__no" aria-hidden="true">W-02</span>
-            <div class="card__tags"><span class="chip">Submitted</span><span class="chip">NeurIPS 2026</span></div>
-            <h3 class="card__title">NEUROTOKEN</h3>
-            <p class="card__desc">Joint source / direction attention decoding + envelope from short EEG windows.</p>
-            <p class="card__meta">EEG · AAD · Conditional flow matching</p>
+        <!-- Hackable metrics -->
+        <article class="card reveal">
+          <span class="card__kicker">Oct 2026 · arXiv</span>
+          <h3>How hackable is your speech-quality metric?</h3>
+          <p>A corrected protocol for measuring reward hacking. It references the codec round trip and takes the worst case over attacker seeds.</p>
+          <div class="hbars" role="img" aria-label="Share of utterances hacked: NISQA 90%, SSL-MOS 21%, DNSMOS 14%, UTMOS 6%">
+            <div class="hb" style="--v:90"><span>NISQA</span><i></i><b>90%</b></div>
+            <div class="hb" style="--v:21"><span>SSL-MOS</span><i></i><b>21%</b></div>
+            <div class="hb" style="--v:14"><span>DNSMOS</span><i></i><b>14%</b></div>
+            <div class="hb" style="--v:6"><span>UTMOS</span><i></i><b>6%</b></div>
+          </div>
+          <a class="btn btn--sm btn--solid card__btn" href="https://arxiv.org/abs/2610.10899" target="_blank" rel="noopener">Read paper</a>
+        </article>
+
+        <!-- CADENZA -->
+        <article class="card card--wide card--codec reveal">
+          <div class="card__split">
+            <div>
+              <span class="card__kicker">2026 · Interspeech submission</span>
+              <h3>CADENZA</h3>
+              <p>A content-adaptive neural audio codec for speech below one kilobit per second: variable-rate finite scalar quantization, conditional flow matching and a streaming Conformer.</p>
+              <div class="chips"><span>FSQ</span><span>Flow matching</span><span>Streaming Conformer</span></div>
+            </div>
+            <div class="codec" aria-hidden="true">
+              <canvas id="codecWave"></canvas>
+              <span class="codec__rate">&lt;&thinsp;1&thinsp;kbps</span>
+            </div>
           </div>
         </article>
 
-        <article class="card c-lime reveal" data-tilt data-kind="bars">
-          <canvas class="card__viz" aria-hidden="true"></canvas>
-          <div class="card__body">
-            <span class="card__no" aria-hidden="true">W-03</span>
-            <div class="card__tags"><span class="chip">Submitting</span><span class="chip">IEEE TASLP</span></div>
-            <h3 class="card__title">MAESTRO</h3>
-            <p class="card__desc">Multimodal dataset — EEG + eye-tracking + body — for auditory attention.</p>
-            <p class="card__meta">Dataset · Eye-tracking · Multimodal</p>
-          </div>
-        </article>
-
-        <article class="card c-violet reveal" data-tilt data-kind="morph">
-          <canvas class="card__viz" aria-hidden="true"></canvas>
-          <div class="card__body">
-            <span class="card__no" aria-hidden="true">W-04</span>
-            <div class="card__tags"><span class="chip">Targeting</span><span class="chip">NeurIPS 2026</span></div>
-            <h3 class="card__title">CorticalFlow</h3>
-            <p class="card__desc">EEG-to-audio decoding via envelope-first multi-resolution reconstruction.</p>
-            <p class="card__meta">EEG→Audio · Multi-resolution · Envelope</p>
-          </div>
-        </article>
-
-        <article class="card card--wide c-cyan reveal" data-tilt data-kind="reward">
-          <canvas class="card__viz" aria-hidden="true"></canvas>
-          <div class="card__body">
-            <span class="card__no" aria-hidden="true">W-05</span>
-            <div class="card__tags"><span class="chip">Research</span><span class="chip">Contributor</span></div>
-            <h3 class="card__title">AIMO3</h3>
-            <p class="card__desc">Reinforcement learning (GRPO / RLVR) for math-reasoning LLMs, with MCTS and Lean&nbsp;4 verification.</p>
-            <p class="card__meta">GRPO · RLVR · MCTS · Lean 4</p>
-          </div>
-        </article>
-
-        <article class="card c-lime reveal" data-tilt data-kind="eeg">
-          <canvas class="card__viz" aria-hidden="true"></canvas>
-          <div class="card__body">
-            <span class="card__no" aria-hidden="true">W-06</span>
-            <div class="card__tags"><span class="chip">Preprint</span><span class="chip">arXiv</span></div>
-            <h3 class="card__title">Contrastive-AAD</h3>
-            <p class="card__desc">Contrastive-learning attention detection on a custom high-density EEG + gaze rig.</p>
-            <p class="card__meta">Contrastive · IRB rig · HW sync</p>
-          </div>
+        <!-- Contrastive AAD -->
+        <article class="card reveal">
+          <span class="card__kicker">Oct 2024 · arXiv</span>
+          <h3>Contrastive learning for attention detection</h3>
+          <p>Where it started: align EEG with the attended speech in a shared latent space, then fine-tune to classify attention. State of the art on the validation set at publication. With Mark&nbsp;Pitt.</p>
+          <a class="card__link" href="https://arxiv.org/abs/2410.18395" target="_blank" rel="noopener">Read on arXiv <span aria-hidden="true">↗</span></a>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ===== 03 Approach (color block) ===== -->
-  <section class="section approach" id="approach" aria-labelledby="approach-title">
+  <!-- ===== Papers ===== -->
+  <section class="section" id="papers" aria-labelledby="papers-title">
     <div class="wrap">
-      <header class="sec-head sec-head--on-color reveal">
-        <span class="sec-num" aria-hidden="true">03</span>
-        <h2 class="sec-title" id="approach-title">How I work</h2>
+      <header class="head head--row reveal">
+        <div>
+          <h2 id="papers-title">Papers &amp; preprints</h2>
+          <p>Everything on arXiv, plus CADENZA. Publishing as Ali&nbsp;Alavi (earlier as S.&nbsp;A.&nbsp;Alavi&nbsp;Bajestan).</p>
+        </div>
+        <div class="seg seg--lg" role="group" aria-label="Filter papers" id="paperFilter">
+          <button type="button" data-f="all" class="is-on" aria-pressed="true">All</button>
+          <button type="button" data-f="aad" aria-pressed="false">Attention · EEG</button>
+          <button type="button" data-f="speech" aria-pressed="false">Speech</button>
+          <button type="button" data-f="video" aria-pressed="false">Video-language</button>
+          <button type="button" data-f="other" aria-pressed="false">Other</button>
+        </div>
       </header>
-      <blockquote class="pullquote reveal">I build the <em>whole stack</em> — not just notebooks. Custom high-density EEG&nbsp;+&nbsp;gaze hardware, model design, and deployment.</blockquote>
-      <ol class="pipe reveal" aria-label="From data and hardware, to model design, to deployment">
-        <li><span>01</span>Data + Hardware</li>
-        <li><span>02</span>Model Design</li>
-        <li><span>03</span>Deployment</li>
+
+      <ol class="papers" id="paperList">
+        <li class="paper reveal" data-t="aad">
+          <span class="paper__y">2026</span>
+          <div class="paper__m"><a href="https://arxiv.org/abs/2610.17507" target="_blank" rel="noopener">Merit: Making every modality earn its contribution in multimodal attention decoding</a><span><b>A. Alavi</b>, D. S. Williamson · arXiv:2610.17507</span></div>
+          <span class="paper__tag">Attention · EEG</span>
+        </li>
+        <li class="paper reveal" data-t="speech">
+          <span class="paper__y">2026</span>
+          <div class="paper__m"><a href="https://arxiv.org/abs/2610.10899" target="_blank" rel="noopener">How Hackable Is Your Speech Quality Metric? A Corrected Protocol, a Benchmark, and What Patching Buys</a><span><b>A. Alavi</b>, D. S. Williamson · arXiv:2610.10899</span></div>
+          <span class="paper__tag">Speech</span>
+        </li>
+        <li class="paper reveal" data-t="aad">
+          <span class="paper__y">2026</span>
+          <div class="paper__m"><a href="https://arxiv.org/abs/2610.00397" target="_blank" rel="noopener">NEUROTOKEN: Joint Source and Directional AAD with Envelope Decoding via Conditional Flow Matching</a><span><b>A. Alavi</b>, D. S. Williamson · arXiv:2610.00397</span></div>
+          <span class="paper__tag">Attention · EEG</span>
+        </li>
+        <li class="paper reveal" data-t="aad">
+          <span class="paper__y">2026</span>
+          <div class="paper__m"><a href="https://arxiv.org/abs/2609.31898" target="_blank" rel="noopener">MAESTRO: a Multimodal Auditory-attention Egocentric Speech-TRacking Open corpus</a><span>K. M. N. Hassan, <b>A. Alavi</b>, D. S. Williamson · Submitted to IEEE TASLP · arXiv:2609.31898</span></div>
+          <span class="paper__tag">Attention · EEG</span>
+        </li>
+        <li class="paper reveal" data-t="speech">
+          <span class="paper__y">2026</span>
+          <div class="paper__m"><span class="paper__title">CADENZA: Content-Adaptive Encoding with Zero-Collapse Quantization for Sub-Kilobit Neural Audio Compression</span><span><b>A. Alavi</b>, D. S. Williamson · Submitted to Interspeech 2026</span></div>
+          <span class="paper__tag">Speech</span>
+        </li>
+        <li class="paper reveal" data-t="video">
+          <span class="paper__y">2026</span>
+          <div class="paper__m"><a href="https://arxiv.org/abs/2606.01591" target="_blank" rel="noopener">TLG: Temporal-Logic Grounding for Video Question Answering via Source-Annotation Reconstruction and Category-Targeted Reasoning</a><span><b>A. Alavi</b> · TimeLogic Challenge @ CVPR 2026 report · arXiv:2606.01591</span></div>
+          <span class="paper__tag">Video-language</span>
+        </li>
+        <li class="paper reveal" data-t="video">
+          <span class="paper__y">2026</span>
+          <div class="paper__m"><a href="https://arxiv.org/abs/2606.01485" target="_blank" rel="noopener">Perception First: A Frontier Native-Video Model with Self-Consistency for Implicit Video Question Answering</a><span><b>A. Alavi</b> · VRR Challenge @ CVPR 2026 report · arXiv:2606.01485</span></div>
+          <span class="paper__tag">Video-language</span>
+        </li>
+        <li class="paper reveal" data-t="video">
+          <span class="paper__y">2026</span>
+          <div class="paper__m"><a href="https://arxiv.org/abs/2606.00910" target="_blank" rel="noopener">Reason, Retrieve, Re-rank: A Zero-Shot Reasoning-Aware Framework for Composed Video Retrieval</a><span><b>A. Alavi</b> · CoVR-R Challenge, VidLLMs Workshop @ CVPR 2026 report · arXiv:2606.00910</span></div>
+          <span class="paper__tag">Video-language</span>
+        </li>
+        <li class="paper reveal" data-t="aad">
+          <span class="paper__y">2024</span>
+          <div class="paper__m"><a href="https://arxiv.org/abs/2410.18395" target="_blank" rel="noopener">A contrastive-learning approach for auditory attention detection</a><span><b>S. A. Alavi Bajestan</b>, M. Pitt, D. S. Williamson · arXiv:2410.18395</span></div>
+          <span class="paper__tag">Attention · EEG</span>
+        </li>
+        <li class="paper reveal" data-t="other">
+          <span class="paper__y">2020</span>
+          <div class="paper__m"><a href="https://arxiv.org/abs/2011.06934" target="_blank" rel="noopener">Neural network for estimation of optical characteristics of optically active and turbid scattering media</a><span><b>A. Alavi</b> · arXiv:2011.06934</span></div>
+          <span class="paper__tag">Optics</span>
+        </li>
       </ol>
-      <p class="approach__foot reveal">Custom high-density EEG + gaze + behavioral rig · IRB-approved · hardware-synchronized.</p>
+      <p class="sr-only" aria-live="polite" id="filterStatus"></p>
     </div>
   </section>
 
-  <!-- ===== 04 Experience ===== -->
-  <section class="section ledger-sec" id="experience" aria-labelledby="exp-title">
+  <!-- ===== Challenges ===== -->
+  <section class="section" id="challenges" aria-labelledby="ch-title">
     <div class="wrap">
-      <header class="sec-head reveal">
-        <span class="sec-num" aria-hidden="true">04</span>
-        <h2 class="sec-title" id="exp-title">Experience</h2>
+      <header class="head head--center reveal">
+        <h2 id="ch-title">Challenge record</h2>
+        <p>Leaderboards keep the claims honest.</p>
       </header>
-      <ol class="ledger">
-        <li class="reveal" data-magnetic><span class="lg-year">2025</span><div class="lg-main"><h3>Computer Vision Engineer <em>— BNtelligence</em></h3><p>End-to-end defect detection: data, classification &amp; segmentation, and a real-time video-inference API in production.</p></div></li>
-        <li class="reveal" data-magnetic><span class="lg-year">’19–20</span><div class="lg-main"><h3>Deep-Learning Consultant <em>— AI-bridge, Hamburg</em></h3><p>Shipped production DL — image enhancement, body-part segmentation, super-resolution (TF / PyTorch).</p></div></li>
-        <li class="reveal" data-magnetic><span class="lg-year">2019</span><div class="lg-main"><h3>Software Engineer <em>— Payafanavaran</em></h3><p>C# app for 3D surface reconstruction from structured-light scanning.</p></div></li>
-        <li class="reveal" data-magnetic><span class="lg-year">2016</span><div class="lg-main"><h3>Hardware Design Engineer <em>— Tarashe Sanat</em></h3><p>High-speed FPGA board — DDR3, Ethernet, peripherals — for industrial data acquisition.</p></div></li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- ===== 05 Education ===== -->
-  <section class="section ledger-sec" id="education" aria-labelledby="edu-title">
-    <div class="wrap">
-      <header class="sec-head reveal">
-        <span class="sec-num" aria-hidden="true">05</span>
-        <h2 class="sec-title" id="edu-title">Education</h2>
-      </header>
-      <ol class="ledger">
-        <li class="reveal is-current" data-magnetic><span class="lg-year">2022 →</span><div class="lg-main"><h3>The Ohio State University <span class="now">Current</span></h3><p>Ph.D., Computer Science · adviser Dr.&nbsp;Donald&nbsp;S.&nbsp;Williamson.</p></div></li>
-        <li class="reveal" data-magnetic><span class="lg-year">2022</span><div class="lg-main"><h3>Indiana University</h3><p>Ph.D., Computer Science (transferred to OSU).</p></div></li>
-        <li class="reveal" data-magnetic><span class="lg-year">’16–20</span><div class="lg-main"><h3>University of Tehran</h3><p>M.Sc., Communication Engineering.</p></div></li>
-        <li class="reveal" data-magnetic><span class="lg-year">’12–16</span><div class="lg-main"><h3>Ferdowsi University of Mashhad</h3><p>B.Sc., Electrical &amp; Electronics Engineering.</p></div></li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- ===== 06 Stack ===== -->
-  <section class="section stack" id="stack" aria-labelledby="stack-title">
-    <div class="wrap">
-      <header class="sec-head reveal">
-        <span class="sec-num" aria-hidden="true">06</span>
-        <h2 class="sec-title" id="stack-title">Tools I work in</h2>
-      </header>
-      <div class="stack-groups">
-        <div class="sg reveal"><h3>Languages</h3><div class="chips-lg"><span>Python</span><span>C/C++</span><span>C#</span><span>CUDA</span><span>MATLAB</span><span>Java</span><span>JavaScript</span></div></div>
-        <div class="sg reveal"><h3>ML frameworks</h3><div class="chips-lg"><span>PyTorch</span><span>TensorFlow</span><span>Lightning</span><span>scikit-learn</span></div></div>
-        <div class="sg reveal"><h3>Infra / MLOps</h3><div class="chips-lg"><span>Git</span><span>Linux</span><span>Docker</span><span>HPC / Slurm</span><span>Weights &amp; Biases</span><span>Hydra</span><span>LaTeX</span><span>Lean 4</span></div></div>
-        <div class="sg reveal"><h3>Hardware</h3><div class="chips-lg"><span>FPGA · VHDL/Verilog</span><span>ARM Cortex-M</span><span>LabVIEW</span><span>Cadence</span></div></div>
+      <div class="scatter">
+        <a class="tile tile--1 reveal" href="https://www.kaggle.com/certification/competitions/salialavi/birdclef-2026" target="_blank" rel="noopener">
+          <span class="tile__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="5.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.6 13.2 7 21l5-2.6L17 21l-1.6-7.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+          <b>Silver medal</b>
+          <span>BirdCLEF+ 2026 on Kaggle, 145th place.</span>
+          <em>Certificate ↗</em>
+        </a>
+        <a class="tile tile--2 reveal" href="https://www.linkedin.com/pulse/obesity-ml-challenge-part-3-peer-review-results-crunchlabhq-7slec/" target="_blank" rel="noopener">
+          <span class="tile__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 20V11M12 20V5M18 20v-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+          <b>2nd place, twice</b>
+          <span>Obesity ML Challenge Part 3 (CrunchDAO): both proposals ranked 2nd in peer review.</span>
+          <em>Results ↗</em>
+        </a>
+        <a class="tile tile--3 tile--hot reveal" href="https://arxiv.org/abs/2606.01591" target="_blank" rel="noopener">
+          <span class="tile__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h4l2-5 4 10 2-5h4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <b>TimeLogic · CVPR ’26</b>
+          <span>TLG: 71.37% test accuracy, +24.5 over a VLM baseline, within 3 points of the top.</span>
+          <em>Report ↗</em>
+        </a>
+        <a class="tile tile--4 reveal" href="https://arxiv.org/abs/2606.01485" target="_blank" rel="noopener">
+          <span class="tile__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg></span>
+          <b>VRR · CVPR ’26</b>
+          <span>Perception First: 81.18% on the hidden test split, above the prior best of 80.85%.</span>
+          <em>Report ↗</em>
+        </a>
+        <a class="tile tile--5 reveal" href="https://arxiv.org/abs/2606.00910" target="_blank" rel="noopener">
+          <span class="tile__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="m15 15 5.5 5.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+          <b>CoVR-R · CVPR ’26</b>
+          <span>Reason, Retrieve, Re-rank: 91.9% R@1, zero-shot, frozen models only.</span>
+          <em>Report ↗</em>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ===== 07 Honors ===== -->
-  <section class="section honors" id="honors" aria-labelledby="honors-title">
+  <!-- ===== Experience & Education ===== -->
+  <section class="section" id="experience" aria-labelledby="exp-title">
     <div class="wrap">
-      <header class="sec-head reveal">
-        <span class="sec-num" aria-hidden="true">07</span>
-        <h2 class="sec-title" id="honors-title">Honors &amp; service</h2>
+      <header class="head reveal">
+        <h2 id="exp-title">Experience &amp; education</h2>
       </header>
-      <ul class="honors-list">
-        <li class="reveal"><span class="ho-t">CCBS Summer Research Award — The Ohio State University</span><span class="ho-y">2023</span></li>
-        <li class="reveal"><span class="ho-t">3rd place — CMDC Hackathon</span><span class="ho-y">—</span></li>
-        <li class="reveal"><span class="ho-t">Reviewer — EACL AfricaNLP Workshop</span><span class="ho-y">2021</span></li>
-        <li class="reveal"><span class="ho-t">Student Volunteer — ICLR &amp; ICML</span><span class="ho-y">2021</span></li>
-      </ul>
+      <div class="cols">
+        <div class="panel reveal">
+          <p class="panel__t">Experience</p>
+          <ol class="tl">
+            <li class="is-now"><span class="tl__d">2022 – now</span><div><b>Graduate Research Associate</b><em>The Ohio State University · Columbus, OH</em><p>Auditory attention decoding, multimodal sensing, speech-quality evaluation, neural audio coding.</p></div></li>
+            <li><span class="tl__d">2025</span><div><b>Computer Vision Engineer</b><em>BNtelligence · Columbus, OH</em><p>End-to-end defect detection: data, classification and segmentation, real-time video inference API in production.</p></div></li>
+            <li><span class="tl__d">2022</span><div><b>Graduate Research Assistant</b><em>Indiana University · Bloomington, IN</em><p>Started EEG-guided speech enhancement research.</p></div></li>
+            <li><span class="tl__d">2019 – 20</span><div><b>Deep Learning Consultant</b><em>AI-bridge · Hamburg</em><p>Production image enhancement, body-part segmentation, super-resolution.</p></div></li>
+            <li><span class="tl__d">2019</span><div><b>Software Engineer</b><em>Payafanavaran · Mashhad</em><p>3D surface reconstruction from structured-light scans (C#).</p></div></li>
+            <li><span class="tl__d">2016</span><div><b>Hardware Design Engineer</b><em>Tarashe Sanat-e Pishro · Mashhad</em><p>High-speed FPGA board with DDR3 and Ethernet for data acquisition.</p></div></li>
+          </ol>
+        </div>
+        <div class="stack-col">
+          <div class="panel reveal">
+            <p class="panel__t">Education</p>
+            <ol class="tl">
+              <li class="is-now"><span class="tl__d">2022 – now</span><div><b>Ph.D., Computer Science</b><em>The Ohio State University</em><p>Adviser: Dr. Donald S. Williamson.</p></div></li>
+              <li><span class="tl__d">2022</span><div><b>Ph.D., Computer Science</b><em>Indiana University</em><p>Transferred to Ohio State.</p></div></li>
+              <li><span class="tl__d">2016 – 20</span><div><b>M.Sc., Communication Engineering</b><em>University of Tehran</em></div></li>
+              <li><span class="tl__d">2012 – 16</span><div><b>B.Sc., Electrical &amp; Electronics Eng.</b><em>Ferdowsi University of Mashhad</em></div></li>
+            </ol>
+          </div>
+          <div class="panel reveal">
+            <p class="panel__t">Toolkit</p>
+            <div class="chips chips--lg">
+              <span>PyTorch</span><span>Lightning</span><span>Hugging Face</span><span>Flow matching</span><span>Self-supervised</span><span>Qwen-VL</span><span>SigLIP-2</span><span>CUDA</span><span>HPC / Slurm</span><span>W&amp;B</span><span>EEG + eye-tracking rigs</span><span>FPGA</span>
+            </div>
+          </div>
+          <div class="panel reveal">
+            <p class="panel__t">Honors &amp; service</p>
+            <ul class="honors">
+              <li>CCBS Summer Research Award, Ohio State <span>2023</span></li>
+              <li>3rd place, CMDC Hackathon</li>
+              <li>Reviewer, EACL AfricaNLP Workshop <span>2021</span></li>
+              <li>Student volunteer, ICLR &amp; ICML <span>2021</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ===== 08 Contact (vivid block) ===== -->
-  <section class="section contact" id="contact" aria-labelledby="contact-title">
-    <div class="wrap">
-      <span class="sec-num sec-num--on-color reveal" aria-hidden="true">08</span>
-      <h2 class="contact__big reveal" id="contact-title">Let’s build systems<br>that <span class="grad-on-dark">listen.</span></h2>
-      <div class="contact__grid reveal">
-        <a class="ct-item copy" href="mailto:alavibajestan.1@osu.edu" data-copy="alavibajestan.1@osu.edu" title="Click to copy" data-magnetic>
-          <span class="ct-k">Email · OSU</span><span class="ct-v copy__label">alavibajestan.1@osu.edu</span>
-        </a>
-        <a class="ct-item copy" href="mailto:sa.alavi.b@gmail.com" data-copy="sa.alavi.b@gmail.com" title="Click to copy" data-magnetic>
-          <span class="ct-k">Email · Personal</span><span class="ct-v copy__label">sa.alavi.b@gmail.com</span>
-        </a>
-        <a class="ct-item" href="files/Resume-AliAlavi.pdf" target="_blank" rel="noopener" data-magnetic>
-          <span class="ct-k">Résumé</span><span class="ct-v">Download CV (PDF) ↓</span>
-        </a>
-        <a class="ct-item" href="https://github.com/salialavi" target="_blank" rel="noopener" data-magnetic>
-          <span class="ct-k">Code</span><span class="ct-v">GitHub<span class="sr-only"> (opens in new tab)</span> ↗</span>
-        </a>
-        <a class="ct-item" href="https://scholar.google.com/scholar?q=S.+A.+Alavi+Bajestan" target="_blank" rel="noopener" data-magnetic>
-          <span class="ct-k">Publications</span><span class="ct-v">Google Scholar<span class="sr-only"> (opens in new tab)</span> ↗</span>
-        </a>
+  <!-- ===== Contact ===== -->
+  <section class="cta" id="contact" aria-labelledby="contact-title">
+    <div class="cta__glow" aria-hidden="true"></div>
+    <div class="wrap cta__inner">
+      <p class="cta__k reveal">Ali Alavi</p>
+      <h2 class="cta__t reveal" id="contact-title">Let’s build machines that listen.</h2>
+      <p class="cta__s reveal">Open to research collaborations and industry roles in speech, multimodal and brain-signal ML.</p>
+      <div class="cta__btns reveal">
+        <a class="btn btn--glow" href="mailto:alavibajestan.1@osu.edu">Email me</a>
+        <a class="btn btn--ghost" href="files/Resume-AliAlavi.pdf" target="_blank" rel="noopener">Download CV</a>
       </div>
-      <p class="sr-only" aria-live="polite" id="copyStatus"></p>
-      <footer class="colophon">Fraunces + Inter · WebGL · static site, no build step · salialavi.github.io · © 2026</footer>
     </div>
+    <footer class="foot wrap">
+      <nav class="foot__l" aria-label="Footer">
+        <a href="mailto:alavibajestan.1@osu.edu">alavibajestan.1@osu.edu</a>
+        <a href="mailto:sa.alavi.b@gmail.com">sa.alavi.b@gmail.com</a>
+      </nav>
+      <nav class="foot__r" aria-label="Profiles">
+        <a href="https://github.com/salialavi" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://scholar.google.com/scholar?q=%22Alavi+Bajestan%22+OR+%22Ali+Alavi%22+Williamson" target="_blank" rel="noopener">Scholar</a>
+        <a href="#papers">Papers</a>
+        <span>© 2026</span>
+      </nav>
+    </footer>
   </section>
 
 </main>

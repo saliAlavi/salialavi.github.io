@@ -1,0 +1,210 @@
+%% Résumé — Ali Alavi (S. A. Alavi Bajestan)
+%% Build (from the repo root):
+%%   latexmk -pdf -outdir=resume/build resume/Resume-AliAlavi.tex
+%%   cp resume/build/Resume-AliAlavi.pdf files/Resume-AliAlavi.pdf
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage[scaled=0.92]{helvet}
+\usepackage[letterpaper,top=0.45in,bottom=0.45in,left=0.6in,right=0.6in]{geometry}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{etoolbox}
+\usepackage[hidelinks,pdfusetitle]{hyperref}
+
+\definecolor{accent}{HTML}{4B3FE0}
+\definecolor{ink}{HTML}{111118}
+\definecolor{muted}{HTML}{55566A}
+
+\hypersetup{
+  pdftitle={Ali Alavi - Resume},
+  pdfauthor={Ali Alavi},
+  pdfsubject={Resume},
+  pdfkeywords={auditory attention decoding, EEG, speech, multimodal, video-language models}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\color{ink}
+
+% ---- keep a heading with at least a few lines of its section (needspace.sty, inlined)
+\makeatletter
+\newcommand{\needspace}[1]{\par\begingroup\setlength{\dimen@}{#1}%
+  \vskip\z@\@plus\dimen@\penalty-100\vskip\z@\@plus-\dimen@\endgroup}
+\makeatother
+
+% ---- section headings: sans, accent colour, hairline rule
+\titleformat{\section}
+  {\color{accent}\sffamily\bfseries\large}
+  {}{0pt}{}[\vspace{-4pt}{\color{accent!35}\titlerule[0.6pt]}]
+\titlespacing*{\section}{0pt}{7pt}{4pt}
+\pretocmd{\section}{\needspace{5\baselineskip}}{}{}
+
+\setlist[itemize]{leftmargin=1.1em,label={\color{accent}\small\textbullet},
+  itemsep=1.5pt,parsep=0pt,topsep=1.5pt,partopsep=0pt}
+\setlist[enumerate]{leftmargin=1.6em,label={\color{muted}\small[\arabic*]},
+  itemsep=1.5pt,parsep=0pt,topsep=1.5pt,partopsep=0pt}
+
+% ---- helpers
+% \entry{Organisation}{Location}{Role}{Dates}
+\newcommand{\entry}[4]{%
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1} & {\color{muted}#2} \\
+    \textit{#3} & {\color{muted}\small #4}
+  \end{tabularx}\par\vspace{1pt}}
+% \project{Name}{one-line descriptor}{right-aligned note}
+\newcommand{\project}[3]{\textbf{#1} --- #2\hfill{\small #3}}
+\newcommand{\me}{\textbf{A.~Alavi}}
+\newcommand{\arxiv}[1]{\href{https://arxiv.org/abs/#1}{\color{accent}arXiv:#1}}
+\newcommand{\venue}[1]{{\color{muted}\textit{#1}}}
+
+\begin{document}
+
+% =====================================================================
+\begin{center}
+  {\sffamily\bfseries\fontsize{24}{26}\selectfont Ali Alavi}\\[3pt]
+  {\color{muted}\small Ph.D.\ researcher, Computer Science, The Ohio State University
+   \,·\, attention decoding, speech, multimodal \& video-language models}\\[3pt]
+  \small
+  \href{mailto:alavibajestan.1@osu.edu}{alavibajestan.1@osu.edu} \,|\,
+  \href{mailto:sa.alavi.b@gmail.com}{sa.alavi.b@gmail.com} \,|\,
+  +1 (812) 360-3048 \,|\,
+  \href{https://salialavi.github.io}{\color{accent}salialavi.github.io} \,|\,
+  \href{https://github.com/salialavi}{github.com/salialavi} \,|\,
+  Columbus, OH
+\end{center}
+\vspace{-8pt}
+
+% =====================================================================
+\section{Education}
+\entry{The Ohio State University}{Columbus, OH}{Ph.D.\ in Computer Science}{Sep.\ 2022 -- Present}
+{\small Adviser: Dr.\ Donald S.\ Williamson. Research: auditory attention decoding, multimodal EEG and behavioral
+sensing, speech quality assessment, neural audio coding.}\par\vspace{3pt}
+\entry{Indiana University}{Bloomington, IN}{Ph.D.\ in Computer Science (transferred to OSU)}{Jan.\ 2022 -- Sep.\ 2022}
+\vspace{1pt}
+\entry{University of Tehran}{Tehran, Iran}{M.Sc.\ in Communication Engineering}{Sep.\ 2016 -- Oct.\ 2020}
+{\small Thesis: Monte Carlo simulation of polarization-sensitive optical coherence tomography using parallel programming.}\par\vspace{3pt}
+\entry{Ferdowsi University of Mashhad}{Mashhad, Iran}{B.Sc.\ in Electrical and Electronics Engineering}{Sep.\ 2012 -- Mar.\ 2016}
+{\small Capstone: LNA compensator with LabVIEW and Xmega microcontrollers.}
+
+% =====================================================================
+\section{Research Experience}
+\entry{The Ohio State University}{Columbus, OH}{Graduate Research Associate / GTA}{Sep.\ 2022 -- Present}
+\begin{itemize}
+  \item \project{Merit}{multimodal attention decoding with per-modality credit}{\arxiv{2610.17507}}\\
+    Decoder over EEG, eye tracking, head motion and scene video, with a Shapley-value test of how much accuracy
+    each stream earns. \textbf{0.82} / \textbf{0.74} four-way accuracy within / across listeners (chance 0.25),
+    above the published benchmark; showed behavioral streams almost halve the EEG's share of accuracy.
+  \item \project{NEUROTOKEN}{joint source and direction AAD with envelope decoding}{\arxiv{2610.00397}}\\
+    One EEG network, three heads; a flow-matching head scores talkers by likelihood ratio: \textbf{+9--16\%} 5\,s
+    source-AAD over the best non-generative baseline (KUL, DTU, NJU), \textasciitilde3$\times$ lower subject
+    variance. Showed 95--97\% direction-AAD results drop 17--45\% under trial-disjoint splits.
+  \item \project{MAESTRO}{open multimodal auditory-attention corpus}{\arxiv{2609.31898}}\\
+    Co-developed the first AAD corpus with simultaneous EEG, gaze, pupillometry, egocentric video and head IMU
+    (four talkers, several SNRs); designed and built the EEG + eye-tracking recording setup: IRB protocol,
+    stimulus delivery, hardware synchronization, participant sessions. Public on Hugging Face.
+  \item \project{Speech-quality metric hackability}{corrected protocol and benchmark}{\arxiv{2610.10899}}\\
+    Corrected how reward-hacking of quality predictors is measured (changes results up to 4$\times$); NISQA is
+    hacked on \textbf{90\%} of utterances vs.\ SSL-MOS 21\%, DNSMOS 14\%, UTMOS 6\%; audited attack-detect-patch hardening.
+  \item \project{CADENZA}{content-adaptive neural audio codec}{\venue{Interspeech 2026 submission}}\\
+    Sub-kilobit speech compression via variable-rate finite scalar quantization, conditional flow matching and a
+    streaming Conformer.
+  \item \project{Contrastive AAD}{self-supervised EEG--speech alignment}{\arxiv{2410.18395}}\\
+    Aligned EEG and attended-speech representations, then fine-tuned for attention classification;
+    state of the art on the validation set at publication.
+\end{itemize}
+\vspace{1pt}
+\entry{Indiana University}{Bloomington, IN}{Graduate Research Assistant}{Jan.\ 2022 -- Sep.\ 2022}
+\begin{itemize}
+  \item Started research on EEG-guided speech enhancement with deep learning under Dr.\ Donald S.\ Williamson.
+\end{itemize}
+
+% =====================================================================
+\section{Competitions \& Challenge Reports}
+\begin{itemize}
+  \item \textbf{Silver Medal, 145th place} --- BirdCLEF+ 2026, Kaggle.
+    \hfill{\small\href{https://www.kaggle.com/certification/competitions/salialavi/birdclef-2026}{\color{accent}certificate}}
+  \item \textbf{2nd place, both submitted proposals} --- Obesity ML Challenge Part 3 (peer review), CrunchDAO, 2026.
+    \hfill{\small\href{https://www.linkedin.com/pulse/obesity-ml-challenge-part-3-peer-review-results-crunchlabhq-7slec/}{\color{accent}results}}
+  \item \textbf{TimeLogic Challenge @ CVPR 2026} ---
+    \textit{TLG: Temporal-Logic Grounding for Video Question Answering via Source-Annotation Reconstruction and
+    Category-Targeted Reasoning.} \arxiv{2606.01591}\\
+    \textbf{71.37\%} test accuracy (+24.5 over a VLM baseline), within 3 points of the leaderboard top.
+  \item \textbf{VRR Challenge @ CVPR 2026} ---
+    \textit{Perception First: A Frontier Native-Video Model with Self-Consistency for Implicit Video Question
+    Answering.} \arxiv{2606.01485}\\
+    \textbf{81.18\%} on the hidden test split, above the prior best (80.85\%), training-free.
+  \item \textbf{CoVR-R Challenge, VidLLMs Workshop @ CVPR 2026} ---
+    \textit{Reason, Retrieve, Re-rank: A Zero-Shot Reasoning-Aware Framework for Composed Video Retrieval.}
+    \arxiv{2606.00910}\\
+    \textbf{91.9\% R@1} and 98.2\% R@10 on the test set with frozen models only (Qwen3-VL, SigLIP-2).
+\end{itemize}
+
+% =====================================================================
+\section{Publications \& Preprints}
+\begin{enumerate}
+  \item \me, D.\,S.\ Williamson. ``Merit: Making every modality earn its contribution in multimodal attention
+    decoding.'' \arxiv{2610.17507}, 2026.
+  \item \me, D.\,S.\ Williamson. ``How Hackable Is Your Speech Quality Metric? A Corrected Protocol, a Benchmark,
+    and What Patching Buys.'' \arxiv{2610.10899}, 2026.
+  \item \me, D.\,S.\ Williamson. ``NEUROTOKEN: Joint Source and Directional AAD with Envelope Decoding via
+    Conditional Flow Matching.'' \arxiv{2610.00397}, 2026.
+  \item K.\,M.\,N.\ Hassan, \me, D.\,S.\ Williamson. ``MAESTRO: a Multimodal Auditory-attention Egocentric
+    Speech-TRacking Open corpus.'' \venue{Submitted to IEEE Trans.\ Audio, Speech, and Language Processing};
+    \arxiv{2609.31898}, 2026.
+  \item \me, D.\,S.\ Williamson. ``CADENZA: Content-Adaptive Encoding with Zero-Collapse Quantization for
+    Sub-Kilobit Neural Audio Compression.'' \venue{Submitted to Interspeech}, 2026.
+  \item \textbf{S.\,A.\ Alavi Bajestan}, M.\ Pitt, D.\,S.\ Williamson. ``A contrastive-learning approach for
+    auditory attention detection.'' \arxiv{2410.18395}, 2024.
+  \item \me. ``Neural network for estimation of optical characteristics of optically active and turbid
+    scattering media.'' \arxiv{2011.06934}, 2020.
+\end{enumerate}
+
+% =====================================================================
+\section{Industry Experience}
+\entry{BNtelligence}{Columbus, OH}{Computer Vision Engineer}{Jul.\ 2025 -- Aug.\ 2025}
+\begin{itemize}
+  \item Built an end-to-end defect-detection pipeline: data collection and annotation, classification and
+    semantic-segmentation models, and a real-time video inference API serving production traffic.
+\end{itemize}
+\entry{AI-bridge}{Hamburg, Germany}{Deep Learning Consultant}{Oct.\ 2019 -- Mar.\ 2020}
+\begin{itemize}
+  \item Shipped production deep-learning applications (image enhancement, body-part segmentation,
+    super-resolution) in TensorFlow and PyTorch.
+\end{itemize}
+\entry{Payafanavaran}{Mashhad, Iran}{Software Engineer}{Jan.\ 2019 -- Aug.\ 2019}
+\begin{itemize}
+  \item Developed a C\# application for 3D surface reconstruction from structured-light scanning data.
+\end{itemize}
+\entry{Tarashe Sanat-e Pishro}{Mashhad, Iran}{Hardware Design Engineer}{Jul.\ 2016 -- Sep.\ 2016}
+\begin{itemize}
+  \item Designed a high-speed FPGA board (DDR3 SDRAM, Ethernet, peripherals) for industrial data acquisition.
+\end{itemize}
+
+% =====================================================================
+\section{Technical Skills}
+\begin{tabularx}{\linewidth}{@{}l@{\hspace{8pt}}X@{}}
+  \textbf{Research} & auditory attention decoding, EEG/BCI, multimodal fusion and attribution, speech quality
+    assessment, neural audio coding, flow matching and diffusion, self-supervised and contrastive learning,
+    video-language models, RL for LLMs (GRPO, RLVR) \\[1pt]
+  \textbf{Languages} & Python, C/C++, C\#, CUDA, MATLAB, Java, JavaScript \\[1pt]
+  \textbf{ML / Infra} & PyTorch, Lightning, TensorFlow, scikit-learn, Hugging Face, Qwen-VL, SigLIP-2, Gemini API,
+    Git, Linux, Docker, HPC/Slurm, W\&B, Hydra, \LaTeX, Lean\,4 \\[1pt]
+  \textbf{Hardware} & EEG and eye-tracking acquisition and sync, FPGA (VHDL/Verilog), ARM Cortex-M, LabVIEW, Cadence
+\end{tabularx}
+
+% =====================================================================
+\section{Honors \& Service}
+\begin{itemize}
+  \item CCBS Summer Research Award, The Ohio State University, 2023 \,·\, 3rd Place, CMDC Hackathon
+  \item Reviewer, EACL 2021 AfricaNLP Workshop \,·\, Student Volunteer, ICLR 2021, ICML 2021, ICEE 2015
+    \,·\, Coordinator, Entrepreneurship Center, Ferdowsi University of Mashhad, 2015--2016
+\end{itemize}
+
+\end{document}
