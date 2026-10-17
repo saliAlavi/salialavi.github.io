@@ -10,7 +10,8 @@ violet light beam, glassy dark panels, indigo glow buttons, a hero dashboard moc
   NEUROTOKEN, MAESTRO, contrastive AAD, the 2020 optics paper, and the three CVPR 2026
   challenge reports: TLG, Perception First, R3-CoVR).
 - Competitions: BirdCLEF+ 2026 silver (145th); Obesity ML Challenge Part 3, 2nd place
-  in peer review for both proposals.
+  in peer review for both proposals. Only these two prizes go in the awards section
+  (site and résumé); the CVPR 2026 challenge reports are listed as papers only.
 - Every number on the page comes from a paper or a results page. The envelope chart is
   labelled illustrative.
 
@@ -24,7 +25,7 @@ violet light beam, glassy dark panels, indigo glow buttons, a hero dashboard moc
 6. Pipeline: EEG / gaze / head IMU / audio → AAD chip → which talker / side / envelope.
 7. Selected research bento (Merit, NEUROTOKEN, MAESTRO, hackable metrics, CADENZA, contrastive AAD).
 8. Papers & preprints, filterable by topic.
-9. Challenge record: five tilted glass tiles.
+9. Competition awards: two tilted glass tiles (BirdCLEF+ silver, Obesity 2nd place).
 10. Experience & education, toolkit, honors.
 11. Contact CTA with light rising from below; footer.
 
