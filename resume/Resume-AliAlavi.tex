@@ -99,26 +99,17 @@ sensing, speech quality assessment, neural audio coding.}\par\vspace{3pt}
 \entry{The Ohio State University}{Columbus, OH}{Graduate Research Associate / GTA}{Sep.\ 2022 -- Present}
 \begin{itemize}
   \item \project{Merit}{multimodal attention decoding with per-modality credit}{\arxiv{2610.17507}}\\
-    Decoder over EEG, eye tracking, head motion and scene video, with a Shapley-value test of how much accuracy
-    each stream earns. \textbf{0.82} / \textbf{0.74} four-way accuracy within / across listeners (chance 0.25),
-    above the published benchmark; showed behavioral streams almost halve the EEG's share of accuracy.
+    Decodes attention from EEG, eye tracking, head motion and scene video; measures what each modality adds.
   \item \project{NEUROTOKEN}{joint source and direction AAD with envelope decoding}{\arxiv{2610.00397}}\\
-    One EEG network, three heads; a flow-matching head scores talkers by likelihood ratio: \textbf{+9--16\%} 5\,s
-    source-AAD over the best non-generative baseline (KUL, DTU, NJU), \textasciitilde3$\times$ lower subject
-    variance. Showed 95--97\% direction-AAD results drop 17--45\% under trial-disjoint splits.
+    One EEG model that identifies the attended talker and direction and reconstructs the envelope via flow matching.
   \item \project{MAESTRO}{open multimodal auditory-attention corpus}{\arxiv{2609.31898}}\\
-    Co-developed the first AAD corpus with simultaneous EEG, gaze, pupillometry, egocentric video and head IMU
-    (four talkers, several SNRs); designed and built the EEG + eye-tracking recording setup: IRB protocol,
-    stimulus delivery, hardware synchronization, participant sessions. Public on Hugging Face.
+    Co-developed a public AAD dataset with synchronized EEG, gaze, video and head motion; built the recording setup.
   \item \project{Speech-quality metric hackability}{corrected protocol and benchmark}{\arxiv{2610.10899}}\\
-    Corrected how reward-hacking of quality predictors is measured (changes results up to 4$\times$); NISQA is
-    hacked on \textbf{90\%} of utterances vs.\ SSL-MOS 21\%, DNSMOS 14\%, UTMOS 6\%; audited attack-detect-patch hardening.
+    Measures how easily learned speech-quality metrics can be gamed, and how well common defenses hold up.
   \item \project{CADENZA}{content-adaptive neural audio codec}{\venue{Interspeech 2026 submission}}\\
-    Sub-kilobit speech compression via variable-rate finite scalar quantization, conditional flow matching and a
-    streaming Conformer.
+    Low-bitrate speech codec with variable-rate finite scalar quantization and conditional flow matching.
   \item \project{Contrastive AAD}{self-supervised EEG--speech alignment}{\arxiv{2410.18395}}\\
-    Aligned EEG and attended-speech representations, then fine-tuned for attention classification;
-    state of the art on the validation set at publication.
+    Contrastive alignment of EEG and attended speech, fine-tuned to identify the attended talker.
 \end{itemize}
 \vspace{1pt}
 \entry{Indiana University}{Bloomington, IN}{Graduate Research Assistant}{Jan.\ 2022 -- Sep.\ 2022}
@@ -129,15 +120,15 @@ sensing, speech quality assessment, neural audio coding.}\par\vspace{3pt}
 % =====================================================================
 \section{Competitions \& Challenges}
 \begin{itemize}
-  \item \textbf{Silver Medal, 145th place} --- BirdCLEF+ 2026, Kaggle.
+  \item \textbf{Silver Medal} --- BirdCLEF+ 2026, Kaggle: species identification from audio recordings.
     \hfill{\small\href{https://www.kaggle.com/certification/competitions/salialavi/birdclef-2026}{\color{accent}certificate}}
-  \item \textbf{2nd place, both submitted proposals} --- Obesity ML Challenge Part 3 (peer review), CrunchDAO, 2026.
+  \item \textbf{2nd place, both submitted proposals} --- Obesity ML Challenge Part 3, CrunchDAO, 2026.
     \hfill{\small\href{https://www.linkedin.com/pulse/obesity-ml-challenge-part-3-peer-review-results-crunchlabhq-7slec/}{\color{accent}results}}
-  \item \textbf{TimeLogic Challenge, CVPR 2026} --- 71.37\% test accuracy, within 3 points of the leaderboard top.
+  \item \textbf{TimeLogic Challenge, CVPR 2026} --- temporal-logic video question answering.
     \hfill{\small\arxiv{2606.01591}}
-  \item \textbf{VRR Challenge, CVPR 2026} --- 81.18\% on the hidden test split, above the prior best (80.85\%).
+  \item \textbf{VRR Challenge, CVPR 2026} --- implicit video question answering with a native-video model.
     \hfill{\small\arxiv{2606.01485}}
-  \item \textbf{CoVR-R Challenge, VidLLMs Workshop, CVPR 2026} --- 91.9\% R@1, zero-shot with frozen models.
+  \item \textbf{CoVR-R Challenge, VidLLMs Workshop, CVPR 2026} --- zero-shot composed video retrieval.
     \hfill{\small\arxiv{2606.00910}}
   \item \textbf{3rd place} --- CMDC Hackathon.
 \end{itemize}
