@@ -1,6 +1,6 @@
 # salialavi.github.io
 
-Personal site for **Ali Alavi** (S. A. Alavi Bajestan), PhD researcher in Computer
+Personal site for **Ali Alavi** (S. A. Alavi Bajestan), PhD student in Computer
 Science at The Ohio State University: auditory attention decoding from EEG, gaze and
 head motion; speech-quality metrics; neural audio coding; video-language reasoning.
 
