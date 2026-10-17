@@ -13,7 +13,7 @@ filterable paper list and tilted competition tiles. Modelled on Outcrowd's
 ## Stack
 Plain static site, no build step, hosted on GitHub Pages.
 
-- `index.html` — single page: nav, hero + research console, venues strip, problem card, pipeline diagram, selected research (bento), papers (filterable), competitions & challenges, experience & education, contact
+- `index.html` — single page: nav, hero + research console, venues strip, problem card, pipeline diagram, selected research (bento), papers (filterable), competition awards, experience & education, contact
 - `styles.css` — design tokens, glass panels, beam/flare, responsive layout, reduced-motion fallbacks
 - `script.js` — starfield, console flatten-on-scroll, envelope chart, codec bars, circuit wires, reveals, active nav, mobile menu, paper filter
 - `resume/Resume-AliAlavi.tex` — LaTeX source of the résumé
