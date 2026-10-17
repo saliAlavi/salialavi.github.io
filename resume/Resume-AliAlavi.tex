@@ -17,9 +17,10 @@
 \usepackage{etoolbox}
 \usepackage[hidelinks,pdfusetitle]{hyperref}
 
-\definecolor{accent}{HTML}{4B3FE0}
-\definecolor{ink}{HTML}{111118}
-\definecolor{muted}{HTML}{55566A}
+% single colour: everything is black
+\definecolor{accent}{HTML}{000000}
+\definecolor{ink}{HTML}{000000}
+\definecolor{muted}{HTML}{000000}
 
 \hypersetup{
   pdftitle={Ali Alavi - Resume},
@@ -39,11 +40,11 @@
   \vskip\z@\@plus\dimen@\penalty-100\vskip\z@\@plus-\dimen@\endgroup}
 \makeatother
 
-% ---- section headings: sans, accent colour, hairline rule
+% ---- section headings: sans, bold, hairline rule
 \titleformat{\section}
   {\color{accent}\sffamily\bfseries\large}
-  {}{0pt}{}[\vspace{-4pt}{\color{accent!35}\titlerule[0.6pt]}]
-\titlespacing*{\section}{0pt}{7pt}{4pt}
+  {}{0pt}{}[\vspace{-1.5pt}{\titlerule[0.5pt]}]
+\titlespacing*{\section}{0pt}{6.5pt}{3pt}
 \pretocmd{\section}{\needspace{5\baselineskip}}{}{}
 
 \setlist[itemize]{leftmargin=1.1em,label={\color{accent}\small\textbullet},
