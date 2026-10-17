@@ -409,8 +409,8 @@ main, .nav { position: relative; z-index: 1; }
 .paper__tag { justify-self: end; padding: 5px 12px; border-radius: 999px; font-size: 12px; white-space: nowrap; color: var(--lav-2); background: rgba(110,96,255,.12); box-shadow: inset 0 0 0 1px rgba(150,140,255,.3); }
 .seg--lg button { padding: 8px 16px; font-size: 14px; }
 
-/* award tiles (scattered glass cards) */
-.scatter { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 26px 28px; max-width: 700px; margin: 0 auto; }
+/* competition tiles (scattered glass cards) */
+.scatter { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px 22px; max-width: 980px; margin: 0 auto; }
 .tile {
   position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px;
   padding: 26px 22px 22px; border-radius: 24px;
@@ -422,6 +422,10 @@ main, .nav { position: relative; z-index: 1; }
 .tile:hover { transform: rotate(0deg) translateY(calc(var(--dy, 0px) - 6px)); box-shadow: inset 0 0 0 1px rgba(170,160,255,.5), 0 34px 60px -20px rgba(80,70,230,.65); }
 .tile--1 { --rot: -3.5deg; --dy: 4px; }
 .tile--2 { --rot: 3deg; --dy: -6px; }
+.tile--3 { --rot: -2deg; --dy: 2px; }
+.tile--4 { --rot: 2.5deg; --dy: 8px; }
+.tile--5 { --rot: -3deg; --dy: -2px; }
+.tile--6 { --rot: 2deg; --dy: 6px; }
 .tile--hot { background: var(--blue-card); box-shadow: inset 0 1px 0 rgba(255,255,255,.35), 0 30px 60px -20px rgba(75,63,240,.9); }
 .tile__ico { width: 58px; height: 58px; border-radius: 16px; display: grid; place-items: center; color: #fff; margin-bottom: 6px;
   background: linear-gradient(150deg, #8a80ff, #4b3ff0 55%, #2f22c4);
@@ -485,6 +489,7 @@ main, .nav { position: relative; z-index: 1; }
   .card__facts { grid-template-columns: 1fr; }
 }
 @media (max-width: 900px) {
+  .scatter { grid-template-columns: 1fr 1fr; }
   .nav__links, .nav__cta { display: none; }
   .nav__toggle { display: block; }
   .nav__pill { padding-left: 22px; }

@@ -7,13 +7,13 @@ head motion; speech-quality metrics; neural audio coding; video-language reasoni
 Design direction, **NIGHTSHIFT**: a black starfield with one violet light beam that
 lands on a glass "research console" (a dashboard mockup filled with real numbers from
 the papers), followed by glass bento cards, a sensors-to-decision circuit diagram, a
-filterable paper list and tilted award tiles. Modelled on Outcrowd's
+filterable paper list and tilted competition tiles. Modelled on Outcrowd's
 "Website for an Incident Management Platform" Dribbble shot.
 
 ## Stack
 Plain static site, no build step, hosted on GitHub Pages.
 
-- `index.html` — single page: nav, hero + research console, venues strip, problem card, pipeline diagram, selected research (bento), papers (filterable), competition awards, experience & education, contact
+- `index.html` — single page: nav, hero + research console, venues strip, problem card, pipeline diagram, selected research (bento), papers (filterable), competitions & challenges, experience & education, contact
 - `styles.css` — design tokens, glass panels, beam/flare, responsive layout, reduced-motion fallbacks
 - `script.js` — starfield, console flatten-on-scroll, envelope chart, codec bars, circuit wires, reveals, active nav, mobile menu, paper filter
 - `resume/Resume-AliAlavi.tex` — LaTeX source of the résumé
